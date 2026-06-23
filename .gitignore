@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+.temp*
+.cache/
+temp/
+
+# Node (if needed in future)
+node_modules/
+npm-debug.log
+
+# OS specific
+Thumbs.db
+Desktop.ini
+
+# Keep the main files
+!profile.html
+!profile.jpg
+!README.md
+!.gitignore

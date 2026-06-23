@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mousa Alfaify — GRC Specialist & Data Automation Expert. 8+ Certifications in Governance, Risk & Compliance." />
+  <meta name="author" content="Mousa Alfaify" />
+  <title>Mousa Alfaify | GRC Specialist</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,800;1,9..144,300&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       DESIGN TOKENS  (mobile-first base)
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    :root {
+      --bg:        #080808;
+      --bg2:       #0f0f0f;
+      --bg3:       #161616;
+      --bg4:       #1e1e1e;
+      --line:      rgba(255,255,255,.08);
+      --line2:     rgba(255,255,255,.14);
+      --t1:        #EDEAE4;
+      --t2:        #857F78;
+      --t3:        #504C47;
+      --ora:       #F97316;
+      --ora-dim:   rgba(249,115,22,.10);
+      --ora-mid:   rgba(249,115,22,.28);
+
+      --ff-d:      'Fraunces', Georgia, serif;
+      --ff-b:      'Outfit', sans-serif;
+      --ff-m:      'DM Mono', monospace;
+
+      --px:        1.25rem;
+      --spy:       4rem;
+      --nav-h:     60px;
+      --ease:      cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       RESET
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:var(--ff-b);
+      background:var(--bg);
+      color:var(--t1);
+      line-height:1.6;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button{font-family:inherit;cursor:pointer}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       LAYOUT
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .w{width:100%;max-width:1140px;margin:0 auto;padding:0 var(--px)}
+
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:.5rem;
+      font-family:var(--ff-m);font-size:.68rem;letter-spacing:.16em;
+      text-transform:uppercase;color:var(--ora);margin-bottom:1rem;
+    }
+    .eyebrow::before{content:'';width:18px;height:1px;background:var(--ora);flex-shrink:0}
+
+    .sh{
+      font-family:var(--ff-d);
+      font-size:clamp(1.8rem,5.5vw,2.8rem);
+      font-weight:800;line-height:1.05;
+      letter-spacing:-.035em;color:var(--t1);
+    }
+    .ss{
+      margin-top:.85rem;font-size:.93rem;color:var(--t2);
+      font-weight:300;line-height:1.75;max-width:500px;
+    }
+
+    .rv{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+    .rv.in{opacity:1;transform:translateY(0)}
+    .rv-1{transition-delay:.07s}.rv-2{transition-delay:.14s}
+    .rv-3{transition-delay:.21s}.rv-4{transition-delay:.28s}
+
+    .divider{height:1px;background:var(--line)}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       NAVIGATION
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .nav{
+      position:fixed;inset:0 0 auto 0;height:var(--nav-h);z-index:1000;
+      background:rgba(8,8,8,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid transparent;transition:border-color .25s var(--ease);
+    }
+    .nav.on{border-color:var(--line)}
+    .nav-i{height:100%;display:flex;align-items:center;justify-content:space-between}
+
+    .logo{
+      font-family:var(--ff-d);font-weight:800;font-size:1.15rem;
+      letter-spacing:-.03em;color:var(--t1)
+    }
+    .logo em{color:var(--ora);font-style:normal}
+
+    .nl{display:none;list-style:none;gap:2rem;align-items:center}
+    .nl a{
+      font-size:.8rem;font-weight:500;letter-spacing:.05em;
+      text-transform:uppercase;color:var(--t2);transition:color .2s
+    }
+    .nl a:hover,.nl a.act{color:var(--t1)}
+
+    .ne{
+      display:none;font-size:.78rem;font-weight:600;letter-spacing:.06em;
+      text-transform:uppercase;padding:.48rem 1.15rem;
+      border:1px solid var(--ora);color:var(--ora);border-radius:2px;
+      transition:background .2s,color .2s
+    }
+    .ne:hover{background:var(--ora);color:#fff}
+
+    .burger{
+      background:none;border:none;color:var(--t1);
+      width:36px;height:36px;display:flex;flex-direction:column;
+      justify-content:center;gap:5px;padding:4px
+    }
+    .burger span{
+      display:block;height:1.5px;background:var(--t1);border-radius:2px;
+      transition:transform .25s var(--ease),opacity .25s,width .25s;transform-origin:center
+    }
+    .burger span:nth-child(3){width:65%}
+    .burger.op span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+    .burger.op span:nth-child(2){opacity:0}
+    .burger.op span:nth-child(3){width:100%;transform:translateY(-6.5px) rotate(-45deg)}
+
+    .drawer{
+      position:fixed;inset:var(--nav-h) 0 0 0;
+      background:rgba(8,8,8,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+      z-index:999;display:flex;flex-direction:column;padding:2.5rem var(--px);
+      transform:translateX(100%);transition:transform .3s var(--ease)
+    }
+    .drawer.op{transform:translateX(0)}
+    .dl{list-style:none;display:flex;flex-direction:column}
+    .dl li{border-bottom:1px solid var(--line)}
+    .dl a{
+      display:block;padding:1.25rem 0;
+      font-family:var(--ff-d);font-size:1.55rem;font-weight:700;
+      letter-spacing:-.025em;color:var(--t2);transition:color .2s
+    }
+    .dl a:hover{color:var(--t1)}
+    .dcta{
+      margin-top:2rem;display:inline-flex;align-items:center;gap:.6rem;
+      padding:1rem 1.5rem;background:var(--ora);color:#fff;
+      font-weight:600;font-size:.9rem;border-radius:2px
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       HERO
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .hero{
+      padding-top:var(--nav-h);min-height:100svh;
+      display:flex;align-items:center;position:relative;overflow:hidden
+    }
+    .hero::before{
+      content:'';position:absolute;top:-15%;right:-25%;
+      width:70vw;height:70vw;max-width:480px;max-height:480px;
+      background:radial-gradient(circle,rgba(249,115,22,.055) 0%,transparent 70%);
+      pointer-events:none
+    }
+    .hero-in{padding:3rem 0 4rem;position:relative;z-index:1;width:100%}
+
+    .pill{
+      display:inline-flex;align-items:center;gap:.55rem;
+      padding:.38rem .95rem;border:1px solid var(--line2);border-radius:100px;
+      font-family:var(--ff-m);font-size:.64rem;letter-spacing:.12em;
+      text-transform:uppercase;color:var(--t2);margin-bottom:1.75rem
+    }
+    .dot{
+      width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;
+      animation:dp 2.5s ease-in-out infinite
+    }
+    @keyframes dp{
+      0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}
+      50%{box-shadow:0 0 0 4px transparent}
+    }
+
+    .hname{
+      font-family:var(--ff-d);
+      font-size:clamp(2.5rem,9vw,5.5rem);
+      font-weight:800;line-height:.95;letter-spacing:-.04em;
+      color:var(--t1);margin-bottom:.7rem
+    }
+    .hrole{
+      font-family:var(--ff-d);
+      font-size:clamp(1rem,3vw,1.45rem);
+      font-weight:300;font-style:italic;color:var(--t2);
+      margin-bottom:1.4rem;letter-spacing:-.01em
+    }
+    .hrole strong{color:var(--ora);font-style:normal;font-weight:600}
+
+    .hdesc{
+      font-size:clamp(.88rem,2.2vw,1rem);color:var(--t2);font-weight:300;
+      line-height:1.8;max-width:460px;margin-bottom:2rem
+    }
+
+    .acts{display:flex;flex-direction:column;gap:.7rem}
+
+    .bs{
+      display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+      padding:.9rem 1.75rem;background:var(--ora);color:#fff;
+      font-weight:600;font-size:.88rem;letter-spacing:.02em;border-radius:2px;
+      border:none;width:100%;transition:opacity .2s,transform .2s
+    }
+    .bs:hover{opacity:.9;transform:translateY(-1px)}
+
+    .bo{
+      display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+      padding:.9rem 1.75rem;border:1px solid var(--line2);color:var(--t2);
+      font-weight:500;font-size:.88rem;border-radius:2px;width:100%;
+      transition:border-color .2s,color .2s,transform .2s
+    }
+    .bo:hover{border-color:var(--ora);color:var(--t1);transform:translateY(-1px)}
+
+    .hphoto{display:none}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       METRICS STRIP
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .met{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+    .met-g{display:grid;grid-template-columns:1fr 1fr}
+    .mc{
+      padding:1.6rem var(--px);border-right:1px solid var(--line);border-bottom:1px solid var(--line)
+    }
+    .mc:nth-child(2n){border-right:none}
+    .mc:nth-last-child(-n+2){border-bottom:none}
+    .mv{
+      font-family:var(--ff-d);font-size:2rem;font-weight:800;
+      line-height:1;color:var(--t1);letter-spacing:-.04em;margin-bottom:.28rem
+    }
+    .mv em{color:var(--ora);font-style:normal}
+    .ml{font-size:.76rem;color:var(--t2);font-weight:300;line-height:1.4}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ABOUT
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .about{padding:var(--spy) 0}
+    .abt p{font-size:.93rem;color:var(--t2);font-weight:300;line-height:1.85;margin-bottom:1rem}
+    .abt p:last-child{margin-bottom:0}
+    .abt strong{color:var(--t1);font-weight:500}
+
+    .pillars{
+      margin-top:2rem;display:grid;gap:1px;
+      background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden
+    }
+    .pil{
+      background:var(--bg);padding:1.2rem 1.15rem 1.35rem;transition:background .2s
+    }
+    .pil:hover{background:var(--bg3)}
+    .pilic{
+      width:30px;height:30px;background:var(--ora-dim);border-radius:5px;
+      display:flex;align-items:center;justify-content:center;
+      color:var(--ora);font-size:.78rem;margin-bottom:.8rem
+    }
+    .pil h4{font-size:.88rem;font-weight:600;color:var(--t1);margin-bottom:.3rem}
+    .pil p{font-size:.8rem;color:var(--t2);font-weight:300;line-height:1.65}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       CAPABILITIES
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .caps{padding:var(--spy) 0;background:var(--bg2)}
+    .cl{
+      margin-top:2.25rem;display:grid;gap:1px;
+      background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden
+    }
+    .cap{
+      background:var(--bg2);padding:1.4rem 1.15rem;position:relative;transition:background .2s
+    }
+    .cap::before{
+      content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
+      background:var(--ora);opacity:0;transition:opacity .2s
+    }
+    .cap:hover{background:var(--bg3)}
+    .cap:hover::before{opacity:1}
+    .cr{display:flex;align-items:flex-start;gap:.85rem;margin-bottom:.55rem}
+    .cn{font-family:var(--ff-m);font-size:.6rem;color:var(--ora);letter-spacing:.1em;flex-shrink:0;padding-top:.15rem}
+    .ct{font-size:.92rem;font-weight:600;color:var(--t1);line-height:1.25}
+    .cd{font-size:.82rem;color:var(--t2);font-weight:300;line-height:1.7;margin-bottom:.75rem}
+    .ctags{display:flex;flex-wrap:wrap;gap:.4rem}
+    .ctag{
+      font-family:var(--ff-m);font-size:.6rem;letter-spacing:.06em;
+      color:var(--t3);border:1px solid var(--line);padding:.2rem .55rem;border-radius:2px
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       EXPERIENCE (accordion)
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .work{padding:var(--spy) 0}
+    .csl{
+      margin-top:2.25rem;display:grid;gap:1px;
+      background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden
+    }
+    .cs{background:var(--bg)}
+
+    .csh{
+      display:flex;align-items:flex-start;gap:.9rem;padding:1.4rem 1.15rem;
+      cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent
+    }
+    .csh-l{flex:1;min-width:0}
+    .csix{font-family:var(--ff-m);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ora);margin-bottom:.3rem}
+    .csn{font-family:var(--ff-d);font-size:1.1rem;font-weight:700;letter-spacing:-.025em;color:var(--t1);line-height:1.2;margin-bottom:.25rem}
+    .csd{font-size:.72rem;color:var(--t3);font-weight:300}
+
+    .csbg{flex-shrink:0;text-align:right}
+    .csbv{font-family:var(--ff-d);font-size:1.3rem;font-weight:800;color:var(--ora);letter-spacing:-.03em;line-height:1}
+    .csbl{font-size:.62rem;color:var(--t2);margin-top:.12rem;line-height:1.3;max-width:80px}
+
+    .chev{
+      flex-shrink:0;width:26px;height:26px;border:1px solid var(--line2);border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      color:var(--t3);font-size:.62rem;margin-top:.1rem;
+      transition:transform .25s var(--ease),color .25s,border-color .25s
+    }
+    .cs.op .chev{transform:rotate(180deg);color:var(--ora);border-color:var(--ora-mid)}
+
+    .csb{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+    .cs.op .csb{max-height:1400px}
+    .csbi{
+      border-top:1px solid var(--line);padding:1.4rem 1.15rem 1.7rem;display:grid;gap:1.1rem
+    }
+    .csbk h5{
+      font-family:var(--ff-m);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
+      color:var(--ora);margin-bottom:.45rem
+    }
+    .csbk p{font-size:.85rem;color:var(--t2);font-weight:300;line-height:1.75}
+    .csbk p strong{color:var(--t1);font-weight:500}
+    .csi{
+      padding:.95rem 1.05rem;border-left:2px solid var(--ora);
+      background:var(--bg3);border-radius:0 3px 3px 0
+    }
+    .csi p{font-size:.83rem;color:var(--t1);font-style:italic;font-weight:300;line-height:1.65}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       CERTIFICATIONS
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .certs{padding:var(--spy) 0}
+    .cert-g{
+      margin-top:2.25rem;display:grid;gap:1px;
+      background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden
+    }
+    .cert{
+      background:var(--bg2);padding:1rem 1.15rem;position:relative;transition:background .2s;border-left:3px solid var(--ora);border-radius:2px
+    }
+    .cert:hover{background:var(--bg3)}
+    .cert-name{font-size:.9rem;font-weight:600;color:var(--t1);margin-bottom:.3rem}
+    .cert-desc{font-size:.8rem;color:var(--t2);font-weight:300;line-height:1.5}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       SKILLS
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .skills-sec{padding:var(--spy) 0;background:var(--bg2)}
+    .skill-cats{
+      margin-top:2.25rem;display:grid;gap:1px;
+      background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden
+    }
+    .skill-cat{background:var(--bg);padding:1.4rem 1.15rem}
+    .skill-cat h4{font-size:.88rem;font-weight:700;color:var(--ora);margin-bottom:1rem}
+    .skill-list{display:flex;flex-wrap:wrap;gap:.5rem}
+    .skill-tag{
+      font-size:.8rem;padding:.4rem .75rem;background:var(--bg3);color:var(--t1);
+      border:1px solid var(--line);border-radius:3px;transition:all .2s
+    }
+    .skill-tag:hover{border-color:var(--ora);color:var(--ora)}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       PROJECTS
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .projects{padding:var(--spy) 0}
+    .proj-g{
+      margin-top:2.25rem;display:grid;gap:1px;
+      background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden
+    }
+    .proj{background:var(--bg);padding:1.4rem 1.15rem;position:relative;transition:background .2s}
+    .proj::before{
+      content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
+      background:var(--ora);opacity:0;transition:opacity .2s
+    }
+    .proj:hover{background:var(--bg3)}
+    .proj:hover::before{opacity:1}
+    .proj-name{font-size:.95rem;font-weight:700;color:var(--t1);margin-bottom:.5rem}
+    .proj-desc{font-size:.85rem;color:var(--t2);font-weight:300;line-height:1.7}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       CONTACT
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .con{padding:var(--spy) 0;background:var(--bg2)}
+    .cstmt{
+      font-family:var(--ff-d);
+      font-size:clamp(1.6rem,5.5vw,2.5rem);
+      font-weight:700;letter-spacing:-.03em;color:var(--t1);line-height:1.12;margin-bottom:1rem
+    }
+    .cstmt em{color:var(--ora);font-style:normal}
+    .cdesc{font-size:.9rem;color:var(--t2);font-weight:300;line-height:1.8;margin-bottom:1.75rem}
+
+    .clinks{display:grid;gap:.55rem;margin-bottom:0}
+    .clink{
+      display:flex;align-items:center;gap:.85rem;padding:.95rem 1rem;
+      border:1px solid var(--line);border-radius:3px;background:var(--bg);
+      transition:border-color .2s,transform .2s
+    }
+    .clink:hover{border-color:var(--line2);transform:translateX(3px)}
+    .clic{
+      width:32px;height:32px;border-radius:50%;background:var(--ora-dim);
+      color:var(--ora);display:flex;align-items:center;justify-content:center;font-size:.82rem;flex-shrink:0
+    }
+    .clt{flex:1;min-width:0}
+    .cll{font-family:var(--ff-m);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:.08rem}
+    .clv{font-size:.85rem;color:var(--t1);font-weight:400;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .cla{color:var(--t3);font-size:.68rem;flex-shrink:0;transition:color .2s,transform .2s}
+    .clink:hover .cla{color:var(--ora);transform:translateX(2px)}
+
+    .ebox{border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-top:1.5rem}
+    .ebh{
+      padding:.8rem 1rem;background:var(--bg3);border-bottom:1px solid var(--line);
+      font-size:.78rem;font-weight:600;color:var(--t1);letter-spacing:.02em
+    }
+    .ebl{list-style:none;padding:.7rem 1rem .95rem;display:grid;gap:.5rem}
+    .ebl li{
+      display:flex;align-items:flex-start;gap:.6rem;
+      font-size:.8rem;color:var(--t2);font-weight:300;line-height:1.45
+    }
+    .ebl li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--ora);flex-shrink:0;margin-top:.42rem}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       FOOTER
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    footer{padding:1.6rem 0;border-top:1px solid var(--line)}
+    .fi{display:flex;flex-direction:column;gap:.9rem}
+    .fn{font-family:var(--ff-d);font-weight:700;font-size:.9rem;color:var(--t1)}
+    .fc{font-family:var(--ff-m);font-size:.62rem;color:var(--t3);line-height:1.5}
+    .fs{display:flex;gap:.6rem}
+    .fsi{
+      width:32px;height:32px;border:1px solid var(--line);border-radius:2px;
+      display:flex;align-items:center;justify-content:center;
+      color:var(--t3);font-size:.78rem;transition:border-color .2s,color .2s
+    }
+    .fsi:hover{border-color:var(--line2);color:var(--t1)}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       SCROLL TOP
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .stt{
+      position:fixed;bottom:1.25rem;right:1.25rem;width:38px;height:38px;
+      background:var(--ora);border:none;border-radius:2px;color:#fff;
+      font-size:.75rem;display:flex;align-items:center;justify-content:center;
+      opacity:0;pointer-events:none;transition:opacity .25s,transform .2s;z-index:800
+    }
+    .stt.on{opacity:1;pointer-events:auto}
+    .stt:hover{transform:translateY(-2px)}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       TABLET  ≥ 600px
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    @media(min-width:600px){
+      :root{--px:2rem;--spy:5rem}
+      .acts{flex-direction:row}
+      .bs,.bo{width:auto}
+      .met-g{grid-template-columns:repeat(4,1fr)}
+      .mc{border-bottom:none}
+      .mc:nth-child(2n){border-right:1px solid var(--line)}
+      .mc:last-child{border-right:none}
+      .pillars{grid-template-columns:1fr 1fr}
+      .cl{grid-template-columns:1fr 1fr}
+      .cert-g{grid-template-columns:2fr 2fr}
+      .skill-cats{grid-template-columns:1fr 1fr}
+      .proj-g{grid-template-columns:1fr 1fr}
+      .csbi{grid-template-columns:1fr 1fr}
+      .csi{grid-column:1/-1}
+      .fi{flex-direction:row;align-items:center;justify-content:space-between}
+    }
+
+    @media(min-width:768px){
+      .ag{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+      .pillars{margin-top:0;grid-template-columns:1fr}
+      .cong{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+      .ebox{margin-top:0}
+    }
+
+    @media(min-width:1024px){
+      :root{--px:3rem;--spy:6.5rem;--nav-h:68px}
+
+      .nl{display:flex}.ne{display:inline-flex}.burger{display:none}
+
+      .hero-in{display:grid;grid-template-columns:1.05fr 0.95fr;gap:4rem;align-items:center;padding:5rem 0}
+      .hcontent{order:1}
+      .hphoto{
+        display:flex;justify-content:center;align-items:flex-end;order:2
+      }
+      .hpw{
+        width:min(410px,100%);aspect-ratio:3/4;position:relative
+      }
+      .hpw::after{
+        content:'';position:absolute;bottom:-12px;right:-12px;
+        width:55%;height:55%;border:1px solid var(--ora-mid);border-radius:2px;z-index:0
+      }
+      .hptag{
+        position:absolute;top:1.6rem;right:-1rem;z-index:2;
+        background:var(--ora);color:#fff;
+        font-family:var(--ff-m);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;
+        padding:.32rem .75rem;border-radius:2px;writing-mode:vertical-rl;transform:rotate(180deg)
+      }
+      .hpimg{
+        width:100%;height:100%;object-fit:cover;border-radius:2px;
+        display:block;position:relative;z-index:1;
+        background:var(--bg3);border:1px solid var(--line)
+      }
+      .hpph{
+        width:100%;height:100%;border-radius:2px;background:var(--bg3);
+        border:1px solid var(--line);display:flex;flex-direction:column;
+        align-items:center;justify-content:center;gap:.6rem;position:relative;z-index:1
+      }
+      .hpph i{font-size:2.25rem;color:var(--t3)}
+      .hpph p{font-family:var(--ff-m);font-size:.62rem;color:var(--t3);text-align:center;line-height:1.6}
+
+      .mc{padding:2rem 2.5rem}
+      .mv{font-size:2.4rem}
+
+      .cl{grid-template-columns:repeat(3,1fr)}
+      .cert-g{grid-template-columns:repeat(4,1fr)}
+      .skill-cats{grid-template-columns:repeat(2,1fr)}
+      .proj-g{grid-template-columns:repeat(2,1fr)}
+
+      .csh{padding:2rem}
+      .csbi{padding:2rem;gap:1.4rem}
+
+      footer{padding:2rem 0}
+    }
+
+    @media(min-width:1280px){:root{--px:4rem}}
+  </style>
+</head>
+<body>
+
+<!-- ╔══════ NAV ══════╗ -->
+<nav class="nav" id="nav">
+  <div class="w nav-i">
+    <a href="#home" class="logo">MO<em>.</em></a>
+
+    <ul class="nl" id="nl">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="mailto:mousealfaifi@gmail.com" class="ne">Get In Touch</a>
+
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <ul class="dl" id="dl">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:mousealfaifi@gmail.com" class="dcta">
+    <i class="fas fa-arrow-right"></i> Get In Touch
+  </a>
+</div>
+
+
+<!-- ╔══════ HERO ══════╗ -->
+<section id="home" class="hero">
+  <div class="w hero-in">
+
+    <!-- Content -->
+    <div class="hcontent">
+      <div class="pill rv">
+        <span class="dot"></span>Available for Engagements
+      </div>
+
+      <h1 class="hname rv rv-1">Mousa<br>Alfaify</h1>
+
+      <p class="hrole rv rv-2">
+        <strong>GRC Specialist</strong> &amp; Data Automation Expert
+      </p>
+
+      <p class="hdesc rv rv-3">
+        Certified professional with 8+ international certifications in Governance, Risk & Compliance — driving measurable results through ISO standards, intelligent data systems, and strategic organizational transformation.
+      </p>
+
+      <div class="acts rv rv-4">
+        <a href="#experience" class="bs"><i class="fas fa-briefcase"></i> View Experience</a>
+        <a href="#contact" class="bo"><i class="fas fa-arrow-right"></i> Start Conversation</a>
+      </div>
+    </div>
+
+    <!-- Photo (desktop only) -->
+    <div class="hphoto">
+      <div class="hpw">
+        <span class="hptag">GRC Expert</span>
+        <img
+          src="profile.jpg"
+          alt="Mousa Alfaify"
+          class="hpimg"
+          onerror="this.outerHTML='<div class=\'hpph\'><i class=\'fas fa-user\'></i><p>Add profile.jpg<br>to this directory</p></div>'"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ╔══════ METRICS ══════╗ -->
+<div class="met rv">
+  <div class="w" style="padding:0">
+    <div class="met-g">
+      <div class="mc"><div class="mv">8<em>+</em></div><div class="ml">International Certifications</div></div>
+      <div class="mc"><div class="mv">6<em>+</em></div><div class="ml">Years of Experience</div></div>
+      <div class="mc"><div class="mv">99.2<em>%</em></div><div class="ml">Data Accuracy Achieved</div></div>
+      <div class="mc"><div class="mv">45<em>%</em></div><div class="ml">Operational Error Reduction</div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ╔══════ ABOUT ══════╗ -->
+<section id="about" class="about rv">
+  <div class="w">
+    <div class="ag">
+
+      <div>
+        <div class="eyebrow">About</div>
+        <h2 class="sh">Governance that<br>delivers results.</h2>
+        <div class="abt" style="margin-top:1.4rem">
+          <p>Organizations don't fail on compliance frameworks — they fail on execution. My practice is built on one principle: <strong>GRC should make your organization stronger, faster, and more confident</strong> in every operational decision.</p>
+          <p>I operate at the intersection of <strong>strategy and implementation</strong> — diagnosing governance gaps, architecting compliant systems, and building the infrastructure that ensures sustainable operational excellence.</p>
+          <p>My engagements span healthcare, government services, and private sector operations — delivering measurable outcomes that appear in quarterly results, not just audit reports.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="pillars">
+          <div class="pil">
+            <div class="pilic"><i class="fas fa-magnifying-glass"></i></div>
+            <h4>Diagnostic-Led</h4>
+            <p>Every engagement starts by understanding the organization, not applying pre-built solutions. I map governance vulnerabilities before recommending changes.</p>
+          </div>
+          <div class="pil">
+            <div class="pilic"><i class="fas fa-route"></i></div>
+            <h4>End-to-End Delivery</h4>
+            <p>From assessment through deployment and adoption. I own the outcome — no handoff ambiguity, no incomplete implementations.</p>
+          </div>
+          <div class="pil">
+            <div class="pilic"><i class="fas fa-chart-line"></i></div>
+            <h4>Outcome Accountability</h4>
+            <p>Every system is tied to a measurable KPI the organization already tracks — cost reduction, risk mitigation, or operational efficiency.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════ EXPERIENCE ══════╗ -->
+<section id="experience" class="work rv">
+  <div class="w">
+    <div class="eyebrow">Experience</div>
+    <h2 class="sh">Work that moved<br>the needle.</h2>
+    <p class="ss">Strategic leadership and measurable impact across governance, operations, and organizational transformation.</p>
+
+    <div class="csl">
+
+      <!-- EXP 1 -->
+      <div class="cs" id="cs1">
+        <div class="csh" role="button" tabindex="0" aria-expanded="false" aria-controls="cs1b">
+          <div class="csh-l">
+            <div class="csix">01 — Saudi Red Crescent Authority</div>
+            <div class="csn">Internal Communications Specialist</div>
+            <div class="csd">Strategic Communications &amp; Organizational Alignment</div>
+          </div>
+          <div class="csbg"><div class="csbv">68%</div><div class="csbl">Employee Engagement Increase</div></div>
+          <div class="chev"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="csb" id="cs1b">
+          <div class="csbi">
+            <div class="csbk"><h5>Challenge</h5><p>Organization lacked unified internal communications strategy. Baseline employee engagement was 35% with fragmented departmental messaging and no coordinated communication framework across 6 major departments.</p></div>
+            <div class="csbk"><h5>Solution Designed</h5><p>Built comprehensive internal communications strategy with <strong>coordinated messaging across 6 departments</strong>, standardized communication protocols, and engagement-focused content framework.</p></div>
+            <div class="csbk"><h5>Results Delivered</h5><p><strong>Employee engagement increased from 35% to 68%</strong> | Produced 40+ institutional circulars annually | Established unified communication system serving 500+ employees | Developed specialized event content (50+ pieces annually).</p></div>
+            <div class="csbk"><h5>Key Competencies</h5><p>Strategic Communication | Cross-departmental Coordination | Content Management | Institutional Writing (200+ document types) | Employee Engagement | Team Leadership</p></div>
+            <div class="csi"><p><strong>Key Insight:</strong> Effective organizational communication isn't about volume — it's about relevance. Aligning messages across departments and focusing on genuine engagement drivers created sustainable, measurable participation increases.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXP 2 -->
+      <div class="cs" id="cs2">
+        <div class="csh" role="button" tabindex="0" aria-expanded="false" aria-controls="cs2b">
+          <div class="csh-l">
+            <div class="csix">02 — National Ambulatory Center (Saudi Red Crescent)</div>
+            <div class="csn">Operations Control Specialist</div>
+            <div class="csd">GRC Implementation &amp; Data Intelligence</div>
+          </div>
+          <div class="csbg"><div class="csbv">99.2%</div><div class="csbl">Data Accuracy Achieved</div></div>
+          <div class="chev"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="csb" id="cs2b">
+          <div class="csbi">
+            <div class="csbk"><h5>Challenge</h5><p>Emergency services operations relied on fragmented data systems with only 92% accuracy. No real-time performance visibility for 500+ monthly operations. Leadership operated on delayed, unreliable operational intelligence with significant compliance gaps.</p></div>
+            <div class="csbk"><h5>Solution Designed</h5><p>Implemented <strong>ISO 9001 Quality Management standards</strong> and architected <strong>12+ key performance indicators</strong> with real-time Power BI dashboard. Established automated data validation, quality protocols, and compliance monitoring framework.</p></div>
+            <div class="csbk"><h5>Results Delivered</h5><p><strong>Data accuracy improved from 92% to 99.2%</strong> | <strong>Operational errors reduced by 45%</strong> | 24/7 real-time performance dashboard (15+ indicators) | 500+ monthly operations monitored with automated alerts | ISO 9001 certification achieved.</p></div>
+            <div class="csbk"><h5>Key Competencies</h5><p>ISO 9001 Implementation | Data Architecture | KPI Design | Power BI (Advanced) | SQL | Excel VBA | Process Optimization | Governance Framework | Real-time Analytics</p></div>
+            <div class="csi"><p><strong>Key Insight:</strong> True operational excellence requires the marriage of governance and technology. Building trustworthy data systems under quality frameworks enabled leadership to make faster, more confident operational decisions — the real multiplier.</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════ CERTIFICATIONS ══════╗ -->
+<section id="certs" class="certs rv">
+  <div class="w">
+    <div class="eyebrow">Certifications</div>
+    <h2 class="sh">8 International<br>Certifications.</h2>
+    <p class="ss">Globally recognized professional credentials in Governance, Risk, Compliance, and Data Management from leading certification bodies.</p>
+
+    <div class="cert-g">
+      <div class="cert">
+        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>ISO 9001</div>
+        <div class="cert-desc">Quality Management Systems & Process Excellence</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>GRCP</div>
+        <div class="cert-desc">Governance, Risk & Compliance Professional</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>GRCA</div>
+        <div class="cert-desc">Governance, Risk & Compliance Auditor</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>IAAP</div>
+        <div class="cert-desc">Integrated Audit & Assurance Professional</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>IDPP</div>
+        <div class="cert-desc">Integrated Data Protection Professional</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>IPMP</div>
+        <div class="cert-desc">Integrated Policy Management Professional</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>ICEP</div>
+        <div class="cert-desc">Integrated Compliance & Ethics Professional</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>IRMP</div>
+        <div class="cert-desc">Integrated Risk Management Professional</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════ SKILLS ══════╗ -->
+<section id="skills" class="skills-sec rv">
+  <div class="w">
+    <div class="eyebrow">Skills &amp; Tools</div>
+    <h2 class="sh">Technical expertise<br>and leadership.</h2>
+    <p class="ss">Advanced technical tools combined with strategic thinking and cross-functional leadership capabilities.</p>
+
+    <div class="skill-cats">
+      <div class="skill-cat">
+        <h4><i class="fas fa-code" style="margin-right:.5rem"></i>Technical Tools</h4>
+        <div class="skill-list">
+          <span class="skill-tag">Power BI (Advanced)</span>
+          <span class="skill-tag">SQL (Intermediate)</span>
+          <span class="skill-tag">Excel VBA (Advanced)</span>
+          <span class="skill-tag">Data Visualization</span>
+          <span class="skill-tag">Analytics Dashboards</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4><i class="fas fa-shield" style="margin-right:.5rem"></i>Core GRC</h4>
+        <div class="skill-list">
+          <span class="skill-tag">Governance Frameworks</span>
+          <span class="skill-tag">Risk Management</span>
+          <span class="skill-tag">Compliance Programs</span>
+          <span class="skill-tag">ISO 9001 Implementation</span>
+          <span class="skill-tag">Audit & Assurance</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4><i class="fas fa-brain" style="margin-right:.5rem"></i>Strategic Skills</h4>
+        <div class="skill-list">
+          <span class="skill-tag">Strategic Thinking</span>
+          <span class="skill-tag">Process Optimization</span>
+          <span class="skill-tag">Problem Solving</span>
+          <span class="skill-tag">Analytical Thinking</span>
+          <span class="skill-tag">Data-Driven Decision Making</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4><i class="fas fa-people-group" style="margin-right:.5rem"></i>Leadership</h4>
+        <div class="skill-list">
+          <span class="skill-tag">Cross-Functional Leadership</span>
+          <span class="skill-tag">Effective Communication</span>
+          <span class="skill-tag">Team Collaboration</span>
+          <span class="skill-tag">Time Management</span>
+          <span class="skill-tag">Priority Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════ PROJECTS ══════╗ -->
+<section id="projects" class="projects rv">
+  <div class="w">
+    <div class="eyebrow">Projects &amp; Innovations</div>
+    <h2 class="sh">Intelligent systems<br>that scale.</h2>
+    <p class="ss">Custom-built AI and data automation solutions that streamline operations and enhance organizational intelligence.</p>
+
+    <div class="proj-g">
+      <div class="proj">
+        <div class="proj-name"><i class="fas fa-robot" style="margin-right:.5rem;color:var(--ora)"></i>Smart Paramedic Bot</div>
+        <div class="proj-desc">AI assistant providing instant training and answers for paramedics — processes 500+ daily queries at 94% accuracy with comprehensive operational knowledge integration.</div>
+      </div>
+      <div class="proj">
+        <div class="proj-name"><i class="fas fa-chart-bar" style="margin-right:.5rem;color:var(--ora)"></i>Smart Data Analyst Bot</div>
+        <div class="proj-desc">Generative AI-powered platform transforming organizational data into instant strategic insights for all organizational levels — automated report generation saving 20 hours/week at 98% accuracy.</div>
+      </div>
+      <div class="proj">
+        <div class="proj-name"><i class="fas fa-tachometer-alt" style="margin-right:.5rem;color:var(--ora)"></i>Smart Performance Dashboard</div>
+        <div class="proj-desc">Advanced control dashboard monitoring 15+ medical response indicators 24/7 with real-time analytics, automated alerts, and predictive insights for operational decision-making.</div>
+      </div>
+      <div class="proj">
+        <div class="proj-name"><i class="fas fa-file-contract" style="margin-right:.5rem;color:var(--ora)"></i>Smart Admin Writing Guide Bot</div>
+        <div class="proj-desc">Built on official approved administrative writing standards — AI system supporting review and improvement of 200+ document types with compliance verification and quality assurance.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════ CONTACT ══════╗ -->
+<section id="contact" class="con rv">
+  <div class="w">
+    <div class="cong">
+
+      <!-- Left -->
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2 class="cstmt">Let's build<br><em>organizational</em> excellence.</h2>
+        <p class="cdesc">Strong governance and operational intelligence don't happen by accident. I'm excited to discuss how strategic GRC implementation and intelligent data systems can transform your organization's capability and confidence. Let's start a conversation about your governance challenges.</p>
+
+        <div class="clinks">
+          <a href="mailto:mousealfaifi@gmail.com" class="clink">
+            <div class="clic"><i class="fas fa-envelope"></i></div>
+            <div class="clt"><div class="cll">Email</div><div class="clv">mousealfaifi@gmail.com</div></div>
+            <i class="fas fa-arrow-right cla"></i>
+          </a>
+          <a href="tel:+966546748590" class="clink">
+            <div class="clic"><i class="fas fa-phone"></i></div>
+            <div class="clt"><div class="cll">Phone</div><div class="clv">+966 54 674 8590</div></div>
+            <i class="fas fa-arrow-right cla"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/mousa-alfaify" target="_blank" rel="noopener" class="clink">
+            <div class="clic"><i class="fab fa-linkedin"></i></div>
+            <div class="clt"><div class="cll">LinkedIn</div><div class="clv">mousaalfaify</div></div>
+            <i class="fas fa-arrow-right cla"></i>
+          </a>
+          <a href="https://wa.me/966546748590" target="_blank" rel="noopener" class="clink">
+            <div class="clic"><i class="fab fa-whatsapp"></i></div>
+            <div class="clt"><div class="cll">WhatsApp</div><div class="clv">Direct Message</div></div>
+            <i class="fas fa-arrow-right cla"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div>
+        <div class="ebox">
+          <div class="ebh">What to Expect</div>
+          <ul class="ebl">
+            <li>Diagnostic assessment of your governance gaps</li>
+            <li>Clear analysis of compliance and operational risks</li>
+            <li>Strategic recommendations tailored to your context</li>
+            <li>Outcomes focused on measurable business impact</li>
+          </ul>
+        </div>
+        <div class="ebox" style="margin-top:.6rem">
+          <div class="ebh">Engagement Types</div>
+          <ul class="ebl">
+            <li>Governance & Compliance Assessment — 2–4 weeks</li>
+            <li>ISO 9001 Implementation & Certification</li>
+            <li>Data Infrastructure & Analytics Build</li>
+            <li>Strategic GRC Advisory (fractional/ongoing)</li>
+          </ul>
+        </div>
+        <p style="margin-top:1rem;font-family:var(--ff-m);font-size:.6rem;color:var(--t3);line-height:1.6">
+          Response time: all serious inquiries answered within <span style="color:var(--t2)">24 hours</span>.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════ FOOTER ══════╗ -->
+<footer>
+  <div class="w">
+    <div class="fi">
+      <div>
+        <div class="fn">Mousa Alfaify</div>
+        <div class="fc" style="margin-top:.25rem">GRC Specialist · Data Automation & Organizational Intelligence</div>
+      </div>
+      <div class="fc" id="yr"></div>
+      <div class="fs">
+        <a href="https://www.linkedin.com/in/mousa-alfaify" target="_blank" rel="noopener" class="fsi" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:mousealfaifi@gmail.com" class="fsi" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/966546748590" target="_blank" rel="noopener" class="fsi" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="stt" id="stt" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+
+<script>
+  'use strict';
+  const $=id=>document.getElementById(id);
+  const qsa=s=>document.querySelectorAll(s);
+
+  /* NAV scroll */
+  const nav=$('nav');
+  let tk=false;
+  window.addEventListener('scroll',()=>{
+    if(!tk){requestAnimationFrame(()=>{
+      nav.classList.toggle('on',scrollY>30);
+      $('stt').classList.toggle('on',scrollY>500);
+      tk=false;
+    });tk=true;}
+  },{passive:true});
+
+  /* BURGER */
+  const burger=$('burger'),drawer=$('drawer');
+  let open=false;
+  const openD=()=>{open=true;drawer.classList.add('op');burger.classList.add('op');burger.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'};
+  const closeD=()=>{open=false;drawer.classList.remove('op');burger.classList.remove('op');burger.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true');document.body.style.overflow=''};
+  burger.addEventListener('click',()=>open?closeD():openD());
+  qsa('#dl a').forEach(a=>a.addEventListener('click',closeD));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeD()});
+
+  /* SMOOTH SCROLL */
+  qsa('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const t=document.querySelector(a.getAttribute('href'));
+      if(!t)return;e.preventDefault();
+      const nh=parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'));
+      window.scrollTo({top:t.getBoundingClientRect().top+scrollY-nh,behavior:'smooth'});
+    });
+  });
+
+  /* ACTIVE NAV */
+  const secs=qsa('section[id]'),nas=qsa('.nl a');
+  window.addEventListener('scroll',()=>{
+    let c='';secs.forEach(s=>{if(scrollY>=s.offsetTop-150)c=s.id});
+    nas.forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+c));
+  },{passive:true});
+
+  /* REVEAL */
+  const ro=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.06,rootMargin:'0px 0px -25px 0px'});
+  qsa('.rv').forEach(el=>ro.observe(el));
+
+  /* ACCORDION */
+  qsa('.csh').forEach(h=>{
+    const cs=h.closest('.cs');
+    const toggle=()=>{
+      const isOp=cs.classList.contains('op');
+      qsa('.cs.op').forEach(o=>{if(o!==cs){o.classList.remove('op');o.querySelector('.csh').setAttribute('aria-expanded','false')}});
+      cs.classList.toggle('op',!isOp);
+      h.setAttribute('aria-expanded',String(!isOp));
+    };
+    h.addEventListener('click',toggle);
+    h.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
+  });
+
+  /* SCROLL TOP */
+  $('stt').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  /* YEAR */
+  $('yr').textContent='© '+new Date().getFullYear();
+</script>
+</body>
+</html>
