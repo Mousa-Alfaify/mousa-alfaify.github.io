@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mousa Alfaify — GRC Specialist & Data Automation Expert. 9 Certifications in Governance, Risk & Compliance." />
+  <meta name="description" id="metaDesc" content="Mousa Alfaify — GRC Specialist & Data Automation Expert. 9 Certifications in Governance, Risk & Compliance." />
   <meta name="author" content="Mousa Alfaify" />
-  <title>Mousa Alfaify | GRC Specialist</title>
+  <title id="pageTitle">Mousa Alfaify | GRC Specialist</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,800;1,9..144,300&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,800;1,9..144,300&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
@@ -33,6 +33,7 @@
       --ff-d:      'Fraunces', Georgia, serif;
       --ff-b:      'Outfit', sans-serif;
       --ff-m:      'DM Mono', monospace;
+      --ff-ar:     'Cairo', 'Tahoma', sans-serif;
 
       --px:        1.25rem;
       --spy:       4rem;
@@ -536,6 +537,64 @@
     }
 
     @media(min-width:1280px){:root{--px:4rem}}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ICON SPACING (logical, auto-flips for RTL)
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .i-gap{margin-inline-end:.5rem}
+    .i-o{color:var(--ora);margin-inline-end:.5rem}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       LANGUAGE SWITCH
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .langsw{
+      display:inline-flex;align-items:center;gap:.4rem;
+      padding:.4rem .85rem;border:1px solid var(--line2);border-radius:100px;
+      background:transparent;color:var(--t2);font-family:var(--ff-b);
+      font-size:.7rem;font-weight:500;transition:border-color .2s,color .2s;
+      flex-shrink:0;
+    }
+    .langsw:hover{border-color:var(--ora);color:var(--t1)}
+    .langsw i{font-size:.68rem}
+    .nav-r{display:flex;align-items:center;gap:1rem}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       RTL (Arabic)
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    html[dir="rtl"]{--ff-d:var(--ff-ar);--ff-b:var(--ff-ar);--ff-m:var(--ff-ar)}
+
+    html[dir="rtl"] .eyebrow,
+    html[dir="rtl"] .sh,
+    html[dir="rtl"] .pill,
+    html[dir="rtl"] .hname,
+    html[dir="rtl"] .hrole,
+    html[dir="rtl"] .ne,
+    html[dir="rtl"] .nl a,
+    html[dir="rtl"] .csix,
+    html[dir="rtl"] .csn,
+    html[dir="rtl"] .cn,
+    html[dir="rtl"] .cll,
+    html[dir="rtl"] .ctag,
+    html[dir="rtl"] .cstmt,
+    html[dir="rtl"] .mv,
+    html[dir="rtl"] .csbv,
+    html[dir="rtl"] .hptag,
+    html[dir="rtl"] .langsw{letter-spacing:normal}
+
+    html[dir="rtl"] .cert{border-left:none;border-right:3px solid var(--ora)}
+    html[dir="rtl"] .csi{border-left:none;border-right:2px solid var(--ora);border-radius:3px 0 0 3px}
+    html[dir="rtl"] .proj::before,
+    html[dir="rtl"] .cap::before{left:auto;right:0}
+    html[dir="rtl"] .csbg{text-align:left}
+    html[dir="rtl"] .hpw::after{right:auto;left:-12px}
+    html[dir="rtl"] .hptag{
+      writing-mode:horizontal-tb;transform:none;
+      top:1.1rem;right:auto;left:1.1rem;bottom:auto
+    }
+    html[dir="rtl"] .fa-arrow-right,
+    html[dir="rtl"] .fa-arrow-left{transform:scaleX(-1)}
+
+    html[dir="rtl"] .hname{white-space:nowrap;font-size:clamp(1.9rem,8vw,3.8rem)}
   </style>
 </head>
 <body>
@@ -545,31 +604,37 @@
   <div class="w nav-i">
     <a href="#home" class="logo">MO<em>.</em></a>
 
-    <ul class="nl" id="nl">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-r">
+      <ul class="nl" id="nl">
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+        <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
 
-    <a href="mailto:mousealfaifi@gmail.com" class="ne">Get In Touch</a>
+      <a href="mailto:mousealfaifi@gmail.com" class="ne" data-i18n="nav_cta">Get In Touch</a>
 
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+      <button class="langsw" id="langsw" type="button" aria-label="Switch language / تبديل اللغة">
+        <i class="fas fa-globe"></i> <span id="langswTxt">العربية</span>
+      </button>
+
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" data-i18n-aria="a11y_menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
 <!-- Mobile drawer -->
 <div class="drawer" id="drawer" aria-hidden="true">
   <ul class="dl" id="dl">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about" data-i18n="nav_about">About</a></li>
+    <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+    <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
   </ul>
   <a href="mailto:mousealfaifi@gmail.com" class="dcta">
-    <i class="fas fa-arrow-right"></i> Get In Touch
+    <i class="fas fa-arrow-right"></i> <span data-i18n="nav_cta">Get In Touch</span>
   </a>
 </div>
 
@@ -581,34 +646,35 @@
     <!-- Content -->
     <div class="hcontent">
       <div class="pill rv">
-        <span class="dot"></span>Available for Engagements
+        <span class="dot"></span><span data-i18n="hero_pill">Available for Engagements</span>
       </div>
 
-      <h1 class="hname rv rv-1">Mousa<br>Alfaify</h1>
+      <h1 class="hname rv rv-1" data-i18n="hero_name">Mousa<br>Alfaify</h1>
 
-      <p class="hrole rv rv-2">
-        <strong>GRC Specialist</strong> &amp; Data Automation Expert
+      <p class="hrole rv rv-2" data-i18n="hero_role">
+        <strong>Operations Control Specialist</strong> &amp; Data Automation Expert
       </p>
 
-      <p class="hdesc rv rv-3">
+      <p class="hdesc rv rv-3" data-i18n="hero_desc">
         Certified professional with 9 international certifications in Governance, Risk & Compliance — driving measurable results through ISO standards, intelligent data systems, and strategic organizational transformation.
       </p>
 
       <div class="acts rv rv-4">
-        <a href="#experience" class="bs"><i class="fas fa-briefcase"></i> View Experience</a>
-        <a href="#contact" class="bo"><i class="fas fa-arrow-right"></i> Start Conversation</a>
+        <a href="#experience" class="bs"><i class="fas fa-briefcase"></i> <span data-i18n="hero_btn1">View Experience</span></a>
+        <a href="#contact" class="bo"><i class="fas fa-arrow-right"></i> <span data-i18n="hero_btn2">Start Conversation</span></a>
       </div>
     </div>
 
     <!-- Photo (desktop only) -->
     <div class="hphoto">
       <div class="hpw">
-        <span class="hptag">GRC Expert</span>
+        <span class="hptag" data-i18n="hero_photo_tag">GRC Expert</span>
         <img
           src="profile.jpg"
           alt="Mousa Alfaify"
           class="hpimg"
-          onerror="this.outerHTML='<div class=\'hpph\'><i class=\'fas fa-user\'></i><p>Add profile.jpg<br>to this directory</p></div>'"
+          data-i18n-alt="hero_photo_alt"
+          onerror="photoFallback(this)"
         />
       </div>
     </div>
@@ -621,10 +687,10 @@
 <div class="met rv">
   <div class="w" style="padding:0">
     <div class="met-g">
-      <div class="mc"><div class="mv">9</div><div class="ml">International Certifications</div></div>
-      <div class="mc"><div class="mv">6<em>+</em></div><div class="ml">Years of Experience</div></div>
-      <div class="mc"><div class="mv">99.2<em>%</em></div><div class="ml">Data Accuracy Achieved</div></div>
-      <div class="mc"><div class="mv">45<em>%</em></div><div class="ml">Operational Error Reduction</div></div>
+      <div class="mc"><div class="mv">9</div><div class="ml" data-i18n="metric_certs">International Certifications</div></div>
+      <div class="mc"><div class="mv">6<em>+</em></div><div class="ml" data-i18n="metric_years">Years of Experience</div></div>
+      <div class="mc"><div class="mv">99.2<em>%</em></div><div class="ml" data-i18n="metric_accuracy">Data Accuracy Achieved</div></div>
+      <div class="mc"><div class="mv">45<em>%</em></div><div class="ml" data-i18n="metric_errors">Operational Error Reduction</div></div>
     </div>
   </div>
 </div>
@@ -636,12 +702,12 @@
     <div class="ag">
 
       <div>
-        <div class="eyebrow">About</div>
-        <h2 class="sh">Governance that<br>delivers results.</h2>
+        <div class="eyebrow" data-i18n="about_eyebrow">About</div>
+        <h2 class="sh" data-i18n="about_heading">Governance that<br>delivers results.</h2>
         <div class="abt" style="margin-top:1.4rem">
-          <p>Organizations don't fail on compliance frameworks — they fail on execution. My practice is built on one principle: <strong>GRC should make your organization stronger, faster, and more confident</strong> in every operational decision.</p>
-          <p>I operate at the intersection of <strong>strategy and implementation</strong> — diagnosing governance gaps, architecting compliant systems, and building the infrastructure that ensures sustainable operational excellence.</p>
-          <p>My engagements span healthcare, government services, and private sector operations — delivering measurable outcomes that appear in quarterly results, not just audit reports.</p>
+          <p data-i18n="about_p1">Organizations don't fail on compliance frameworks — they fail on execution. My practice is built on one principle: <strong>GRC should make your organization stronger, faster, and more confident</strong> in every operational decision.</p>
+          <p data-i18n="about_p2">I operate at the intersection of <strong>strategy and implementation</strong> — diagnosing governance gaps, architecting compliant systems, and building the infrastructure that ensures sustainable operational excellence.</p>
+          <p data-i18n="about_p3">My engagements span healthcare, government services, and private sector operations — delivering measurable outcomes that appear in quarterly results, not just audit reports.</p>
         </div>
       </div>
 
@@ -649,18 +715,18 @@
         <div class="pillars">
           <div class="pil">
             <div class="pilic"><i class="fas fa-magnifying-glass"></i></div>
-            <h4>Diagnostic-Led</h4>
-            <p>Every engagement starts by understanding the organization, not applying pre-built solutions. I map governance vulnerabilities before recommending changes.</p>
+            <h4 data-i18n="about_pil1_title">Diagnostic-Led</h4>
+            <p data-i18n="about_pil1_desc">Every engagement starts by understanding the organization, not applying pre-built solutions. I map governance vulnerabilities before recommending changes.</p>
           </div>
           <div class="pil">
             <div class="pilic"><i class="fas fa-route"></i></div>
-            <h4>End-to-End Delivery</h4>
-            <p>From assessment through deployment and adoption. I own the outcome — no handoff ambiguity, no incomplete implementations.</p>
+            <h4 data-i18n="about_pil2_title">End-to-End Delivery</h4>
+            <p data-i18n="about_pil2_desc">From assessment through deployment and adoption. I own the outcome — no handoff ambiguity, no incomplete implementations.</p>
           </div>
           <div class="pil">
             <div class="pilic"><i class="fas fa-chart-line"></i></div>
-            <h4>Outcome Accountability</h4>
-            <p>Every system is tied to a measurable KPI the organization already tracks — cost reduction, risk mitigation, or operational efficiency.</p>
+            <h4 data-i18n="about_pil3_title">Outcome Accountability</h4>
+            <p data-i18n="about_pil3_desc">Every system is tied to a measurable KPI the organization already tracks — cost reduction, risk mitigation, or operational efficiency.</p>
           </div>
         </div>
       </div>
@@ -673,9 +739,9 @@
 <!-- ╔══════ EXPERIENCE ══════╗ -->
 <section id="experience" class="work rv">
   <div class="w">
-    <div class="eyebrow">Experience</div>
-    <h2 class="sh">Work that moved<br>the needle.</h2>
-    <p class="ss">Strategic leadership and measurable impact across governance, operations, and organizational transformation.</p>
+    <div class="eyebrow" data-i18n="exp_eyebrow">Experience</div>
+    <h2 class="sh" data-i18n="exp_heading">Work that moved<br>the needle.</h2>
+    <p class="ss" data-i18n="exp_sub">Strategic leadership and measurable impact across governance, operations, and organizational transformation.</p>
 
     <div class="csl">
 
@@ -683,20 +749,20 @@
       <div class="cs" id="cs1">
         <div class="csh" role="button" tabindex="0" aria-expanded="false" aria-controls="cs1b">
           <div class="csh-l">
-            <div class="csix">01 — Saudi Red Crescent Authority</div>
-            <div class="csn">Internal Communications Specialist</div>
-            <div class="csd">Strategic Communications &amp; Organizational Alignment</div>
+            <div class="csix" data-i18n="exp1_index">01 — Saudi Red Crescent Authority</div>
+            <div class="csn" data-i18n="exp1_title">Internal Communications Specialist</div>
+            <div class="csd" data-i18n="exp1_subtitle">Strategic Communications &amp; Organizational Alignment</div>
           </div>
-          <div class="csbg"><div class="csbv">68%</div><div class="csbl">Employee Engagement Increase</div></div>
+          <div class="csbg"><div class="csbv">68%</div><div class="csbl" data-i18n="exp1_badge_label">Employee Engagement Increase</div></div>
           <div class="chev"><i class="fas fa-chevron-down"></i></div>
         </div>
         <div class="csb" id="cs1b">
           <div class="csbi">
-            <div class="csbk"><h5>Challenge</h5><p>Organization lacked unified internal communications strategy. Baseline employee engagement was 35% with fragmented departmental messaging and no coordinated communication framework across 6 major departments.</p></div>
-            <div class="csbk"><h5>Solution Designed</h5><p>Built comprehensive internal communications strategy with <strong>coordinated messaging across 6 departments</strong>, standardized communication protocols, and engagement-focused content framework.</p></div>
-            <div class="csbk"><h5>Results Delivered</h5><p><strong>Employee engagement increased from 35% to 68%</strong> | Produced 40+ institutional circulars annually | Established unified communication system serving 500+ employees | Developed specialized event content (50+ pieces annually).</p></div>
-            <div class="csbk"><h5>Key Competencies</h5><p>Strategic Communication | Cross-departmental Coordination | Content Management | Institutional Writing (200+ document types) | Employee Engagement | Team Leadership</p></div>
-            <div class="csi"><p><strong>Key Insight:</strong> Effective organizational communication isn't about volume — it's about relevance. Aligning messages across departments and focusing on genuine engagement drivers created sustainable, measurable participation increases.</p></div>
+            <div class="csbk"><h5 data-i18n="lbl_challenge">Challenge</h5><p data-i18n="exp1_challenge">Organization lacked unified internal communications strategy. Baseline employee engagement was 35% with fragmented departmental messaging and no coordinated communication framework across 6 major departments.</p></div>
+            <div class="csbk"><h5 data-i18n="lbl_solution">Solution Designed</h5><p data-i18n="exp1_solution">Built comprehensive internal communications strategy with <strong>coordinated messaging across 6 departments</strong>, standardized communication protocols, and engagement-focused content framework.</p></div>
+            <div class="csbk"><h5 data-i18n="lbl_results">Results Delivered</h5><p data-i18n="exp1_results"><strong>Employee engagement increased from 35% to 68%</strong> | Produced 40+ institutional circulars annually | Established unified communication system serving 500+ employees | Developed specialized event content (50+ pieces annually).</p></div>
+            <div class="csbk"><h5 data-i18n="lbl_competencies">Key Competencies</h5><p data-i18n="exp1_competencies">Strategic Communication | Cross-departmental Coordination | Content Management | Institutional Writing (200+ document types) | Employee Engagement | Team Leadership</p></div>
+            <div class="csi"><p data-i18n="exp1_insight"><strong>Key Insight:</strong> Effective organizational communication isn't about volume — it's about relevance. Aligning messages across departments and focusing on genuine engagement drivers created sustainable, measurable participation increases.</p></div>
           </div>
         </div>
       </div>
@@ -705,20 +771,20 @@
       <div class="cs" id="cs2">
         <div class="csh" role="button" tabindex="0" aria-expanded="false" aria-controls="cs2b">
           <div class="csh-l">
-            <div class="csix">02 — National Ambulatory Center (Saudi Red Crescent)</div>
-            <div class="csn">Operations Control Specialist</div>
-            <div class="csd">GRC Implementation &amp; Data Intelligence</div>
+            <div class="csix" data-i18n="exp2_index">02 — National Ambulatory Center (Saudi Red Crescent)</div>
+            <div class="csn" data-i18n="exp2_title">Operations Control Specialist</div>
+            <div class="csd" data-i18n="exp2_subtitle">GRC Implementation &amp; Data Intelligence</div>
           </div>
-          <div class="csbg"><div class="csbv">99.2%</div><div class="csbl">Data Accuracy Achieved</div></div>
+          <div class="csbg"><div class="csbv">99.2%</div><div class="csbl" data-i18n="exp2_badge_label">Data Accuracy Achieved</div></div>
           <div class="chev"><i class="fas fa-chevron-down"></i></div>
         </div>
         <div class="csb" id="cs2b">
           <div class="csbi">
-            <div class="csbk"><h5>Challenge</h5><p>Emergency services operations relied on fragmented data systems with only 92% accuracy. No real-time performance visibility for 500+ monthly operations. Leadership operated on delayed, unreliable operational intelligence with significant compliance gaps.</p></div>
-            <div class="csbk"><h5>Solution Designed</h5><p>Implemented <strong>ISO 9001 Quality Management standards</strong> and architected <strong>12+ key performance indicators</strong> with real-time Power BI dashboard. Established automated data validation, quality protocols, and compliance monitoring framework.</p></div>
-            <div class="csbk"><h5>Results Delivered</h5><p><strong>Data accuracy improved from 92% to 99.2%</strong> | <strong>Operational errors reduced by 45%</strong> | 24/7 real-time performance dashboard (15+ indicators) | 500+ monthly operations monitored with automated alerts | ISO 9001 certification achieved.</p></div>
-            <div class="csbk"><h5>Key Competencies</h5><p>ISO 9001 Implementation | Data Architecture | KPI Design | Power BI (Advanced) | SQL | Excel VBA | Process Optimization | Governance Framework | Real-time Analytics</p></div>
-            <div class="csi"><p><strong>Key Insight:</strong> True operational excellence requires the marriage of governance and technology. Building trustworthy data systems under quality frameworks enabled leadership to make faster, more confident operational decisions — the real multiplier.</p></div>
+            <div class="csbk"><h5 data-i18n="lbl_challenge">Challenge</h5><p data-i18n="exp2_challenge">Emergency services operations relied on fragmented data systems with only 92% accuracy. No real-time performance visibility for 500+ monthly operations. Leadership operated on delayed, unreliable operational intelligence with significant compliance gaps.</p></div>
+            <div class="csbk"><h5 data-i18n="lbl_solution">Solution Designed</h5><p data-i18n="exp2_solution">Implemented <strong>ISO 9001 Quality Management standards</strong> and architected <strong>12+ key performance indicators</strong> with real-time Power BI dashboard. Established automated data validation, quality protocols, and compliance monitoring framework.</p></div>
+            <div class="csbk"><h5 data-i18n="lbl_results">Results Delivered</h5><p data-i18n="exp2_results"><strong>Data accuracy improved from 92% to 99.2%</strong> | <strong>Operational errors reduced by 45%</strong> | 24/7 real-time performance dashboard (15+ indicators) | 500+ monthly operations monitored with automated alerts | ISO 9001 certification achieved.</p></div>
+            <div class="csbk"><h5 data-i18n="lbl_competencies">Key Competencies</h5><p data-i18n="exp2_competencies">ISO 9001 Implementation | Data Architecture | KPI Design | Power BI (Advanced) | SQL | Excel VBA | Process Optimization | Governance Framework | Real-time Analytics</p></div>
+            <div class="csi"><p data-i18n="exp2_insight"><strong>Key Insight:</strong> True operational excellence requires the marriage of governance and technology. Building trustworthy data systems under quality frameworks enabled leadership to make faster, more confident operational decisions — the real multiplier.</p></div>
           </div>
         </div>
       </div>
@@ -731,46 +797,46 @@
 <!-- ╔══════ CERTIFICATIONS ══════╗ -->
 <section id="certs" class="certs rv">
   <div class="w">
-    <div class="eyebrow">Certifications</div>
-    <h2 class="sh">9 International<br>Certifications.</h2>
-    <p class="ss">Globally recognized professional credentials in Governance, Risk, Compliance, Data Management, Exhibitions, and Digital Marketing from leading certification bodies.</p>
+    <div class="eyebrow" data-i18n="certs_eyebrow">Certifications</div>
+    <h2 class="sh" data-i18n="certs_heading">9 International<br>Certifications.</h2>
+    <p class="ss" data-i18n="certs_sub">Globally recognized professional credentials in Governance, Risk, Compliance, Data Management, Exhibitions, and Digital Marketing from leading certification bodies.</p>
 
     <div class="cert-g">
       <div class="cert">
-        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>GRCP</div>
-        <div class="cert-desc">Governance, Risk & Compliance Professional</div>
+        <div class="cert-name"><i class="fas fa-certificate i-o"></i>GRCP</div>
+        <div class="cert-desc" data-i18n="cert1_desc">Governance, Risk & Compliance Professional</div>
       </div>
       <div class="cert">
-        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>GRCA</div>
-        <div class="cert-desc">Governance, Risk & Compliance Auditor</div>
+        <div class="cert-name"><i class="fas fa-certificate i-o"></i>GRCA</div>
+        <div class="cert-desc" data-i18n="cert2_desc">Governance, Risk & Compliance Auditor</div>
       </div>
       <div class="cert">
-        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>IAAP</div>
-        <div class="cert-desc">Integrated Audit & Assurance Professional</div>
+        <div class="cert-name"><i class="fas fa-certificate i-o"></i>IAAP</div>
+        <div class="cert-desc" data-i18n="cert3_desc">Integrated Audit & Assurance Professional</div>
       </div>
       <div class="cert">
-        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>IDPP</div>
-        <div class="cert-desc">Integrated Data Protection Professional</div>
+        <div class="cert-name"><i class="fas fa-certificate i-o"></i>IDPP</div>
+        <div class="cert-desc" data-i18n="cert4_desc">Integrated Data Protection Professional</div>
       </div>
       <div class="cert">
-        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>IPMP</div>
-        <div class="cert-desc">Integrated Policy Management Professional</div>
+        <div class="cert-name"><i class="fas fa-certificate i-o"></i>IPMP</div>
+        <div class="cert-desc" data-i18n="cert5_desc">Integrated Policy Management Professional</div>
       </div>
       <div class="cert">
-        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>ICEP</div>
-        <div class="cert-desc">Integrated Compliance & Ethics Professional</div>
+        <div class="cert-name"><i class="fas fa-certificate i-o"></i>ICEP</div>
+        <div class="cert-desc" data-i18n="cert6_desc">Integrated Compliance & Ethics Professional</div>
       </div>
       <div class="cert">
-        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>IRMP</div>
-        <div class="cert-desc">Integrated Risk Management Professional</div>
+        <div class="cert-name"><i class="fas fa-certificate i-o"></i>IRMP</div>
+        <div class="cert-desc" data-i18n="cert7_desc">Integrated Risk Management Professional</div>
       </div>
       <div class="cert">
-        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>CEM</div>
-        <div class="cert-desc">Certified Exhibition Manager</div>
+        <div class="cert-name"><i class="fas fa-certificate i-o"></i>CEM</div>
+        <div class="cert-desc" data-i18n="cert8_desc">Certified Exhibition Manager</div>
       </div>
       <div class="cert">
-        <div class="cert-name"><i class="fas fa-certificate" style="color:var(--ora);margin-right:.5rem"></i>Google Digital Marketing</div>
-        <div class="cert-desc">Digital Marketing Certification</div>
+        <div class="cert-name"><i class="fas fa-certificate i-o"></i><span data-i18n="cert9_name">Google Digital Marketing</span></div>
+        <div class="cert-desc" data-i18n="cert9_desc">Digital Marketing Certification</div>
       </div>
     </div>
   </div>
@@ -780,49 +846,49 @@
 <!-- ╔══════ SKILLS ══════╗ -->
 <section id="skills" class="skills-sec rv">
   <div class="w">
-    <div class="eyebrow">Skills &amp; Tools</div>
-    <h2 class="sh">Technical expertise<br>and leadership.</h2>
-    <p class="ss">Advanced technical tools combined with strategic thinking and cross-functional leadership capabilities.</p>
+    <div class="eyebrow" data-i18n="skills_eyebrow">Skills &amp; Tools</div>
+    <h2 class="sh" data-i18n="skills_heading">Technical expertise<br>and leadership.</h2>
+    <p class="ss" data-i18n="skills_sub">Advanced technical tools combined with strategic thinking and cross-functional leadership capabilities.</p>
 
     <div class="skill-cats">
       <div class="skill-cat">
-        <h4><i class="fas fa-code" style="margin-right:.5rem"></i>Technical Tools</h4>
+        <h4><i class="fas fa-code i-gap"></i><span data-i18n="skills_cat1_title">Technical Tools</span></h4>
         <div class="skill-list">
-          <span class="skill-tag">Power BI (Advanced)</span>
-          <span class="skill-tag">SQL (Intermediate)</span>
-          <span class="skill-tag">Excel VBA (Advanced)</span>
-          <span class="skill-tag">Data Visualization</span>
-          <span class="skill-tag">Analytics Dashboards</span>
+          <span class="skill-tag" data-i18n="skill_powerbi">Power BI (Advanced)</span>
+          <span class="skill-tag" data-i18n="skill_sql">SQL (Intermediate)</span>
+          <span class="skill-tag" data-i18n="skill_vba">Excel VBA (Advanced)</span>
+          <span class="skill-tag" data-i18n="skill_dataviz">Data Visualization</span>
+          <span class="skill-tag" data-i18n="skill_dashboards">Analytics Dashboards</span>
         </div>
       </div>
       <div class="skill-cat">
-        <h4><i class="fas fa-shield" style="margin-right:.5rem"></i>Core GRC</h4>
+        <h4><i class="fas fa-shield i-gap"></i><span data-i18n="skills_cat2_title">Core GRC</span></h4>
         <div class="skill-list">
-          <span class="skill-tag">Governance Frameworks</span>
-          <span class="skill-tag">Risk Management</span>
-          <span class="skill-tag">Compliance Programs</span>
-          <span class="skill-tag">ISO 9001 Implementation</span>
-          <span class="skill-tag">Audit & Assurance</span>
+          <span class="skill-tag" data-i18n="skill_gov">Governance Frameworks</span>
+          <span class="skill-tag" data-i18n="skill_risk">Risk Management</span>
+          <span class="skill-tag" data-i18n="skill_compliance">Compliance Programs</span>
+          <span class="skill-tag" data-i18n="skill_iso">ISO 9001 Implementation</span>
+          <span class="skill-tag" data-i18n="skill_audit">Audit & Assurance</span>
         </div>
       </div>
       <div class="skill-cat">
-        <h4><i class="fas fa-brain" style="margin-right:.5rem"></i>Strategic Skills</h4>
+        <h4><i class="fas fa-brain i-gap"></i><span data-i18n="skills_cat3_title">Strategic Skills</span></h4>
         <div class="skill-list">
-          <span class="skill-tag">Strategic Thinking</span>
-          <span class="skill-tag">Process Optimization</span>
-          <span class="skill-tag">Problem Solving</span>
-          <span class="skill-tag">Analytical Thinking</span>
-          <span class="skill-tag">Data-Driven Decision Making</span>
+          <span class="skill-tag" data-i18n="skill_strategic">Strategic Thinking</span>
+          <span class="skill-tag" data-i18n="skill_process">Process Optimization</span>
+          <span class="skill-tag" data-i18n="skill_problem">Problem Solving</span>
+          <span class="skill-tag" data-i18n="skill_analytical">Analytical Thinking</span>
+          <span class="skill-tag" data-i18n="skill_datadriven">Data-Driven Decision Making</span>
         </div>
       </div>
       <div class="skill-cat">
-        <h4><i class="fas fa-people-group" style="margin-right:.5rem"></i>Leadership</h4>
+        <h4><i class="fas fa-people-group i-gap"></i><span data-i18n="skills_cat4_title">Leadership</span></h4>
         <div class="skill-list">
-          <span class="skill-tag">Cross-Functional Leadership</span>
-          <span class="skill-tag">Effective Communication</span>
-          <span class="skill-tag">Team Collaboration</span>
-          <span class="skill-tag">Time Management</span>
-          <span class="skill-tag">Priority Management</span>
+          <span class="skill-tag" data-i18n="skill_crossfunc">Cross-Functional Leadership</span>
+          <span class="skill-tag" data-i18n="skill_comm">Effective Communication</span>
+          <span class="skill-tag" data-i18n="skill_team">Team Collaboration</span>
+          <span class="skill-tag" data-i18n="skill_time">Time Management</span>
+          <span class="skill-tag" data-i18n="skill_priority">Priority Management</span>
         </div>
       </div>
     </div>
@@ -833,26 +899,26 @@
 <!-- ╔══════ PROJECTS ══════╗ -->
 <section id="projects" class="projects rv">
   <div class="w">
-    <div class="eyebrow">Projects &amp; Innovations</div>
-    <h2 class="sh">Intelligent systems<br>that scale.</h2>
-    <p class="ss">Custom-built AI and data automation solutions that streamline operations and enhance organizational intelligence.</p>
+    <div class="eyebrow" data-i18n="proj_eyebrow">Projects &amp; Innovations</div>
+    <h2 class="sh" data-i18n="proj_heading">Intelligent systems<br>that scale.</h2>
+    <p class="ss" data-i18n="proj_sub">Custom-built AI and data automation solutions that streamline operations and enhance organizational intelligence.</p>
 
     <div class="proj-g">
       <div class="proj">
-        <div class="proj-name"><i class="fas fa-robot" style="margin-right:.5rem;color:var(--ora)"></i>Smart Paramedic Bot</div>
-        <div class="proj-desc">AI assistant providing instant training and answers for paramedics — processes 500+ daily queries at 94% accuracy with comprehensive operational knowledge integration.</div>
+        <div class="proj-name"><i class="fas fa-robot i-o"></i><span data-i18n="proj1_name">Smart Paramedic Bot</span></div>
+        <div class="proj-desc" data-i18n="proj1_desc">AI assistant providing instant training and answers for paramedics — processes 500+ daily queries at 94% accuracy with comprehensive operational knowledge integration.</div>
       </div>
       <div class="proj">
-        <div class="proj-name"><i class="fas fa-chart-bar" style="margin-right:.5rem;color:var(--ora)"></i>Smart Data Analyst Bot</div>
-        <div class="proj-desc">Generative AI-powered platform transforming organizational data into instant strategic insights for all organizational levels — automated report generation saving 20 hours/week at 98% accuracy.</div>
+        <div class="proj-name"><i class="fas fa-chart-bar i-o"></i><span data-i18n="proj2_name">Smart Data Analyst Bot</span></div>
+        <div class="proj-desc" data-i18n="proj2_desc">Generative AI-powered platform transforming organizational data into instant strategic insights for all organizational levels — automated report generation saving 20 hours/week at 98% accuracy.</div>
       </div>
       <div class="proj">
-        <div class="proj-name"><i class="fas fa-tachometer-alt" style="margin-right:.5rem;color:var(--ora)"></i>Smart Performance Dashboard</div>
-        <div class="proj-desc">Advanced control dashboard monitoring 15+ medical response indicators 24/7 with real-time analytics, automated alerts, and predictive insights for operational decision-making.</div>
+        <div class="proj-name"><i class="fas fa-tachometer-alt i-o"></i><span data-i18n="proj3_name">Smart Performance Dashboard</span></div>
+        <div class="proj-desc" data-i18n="proj3_desc">Advanced control dashboard monitoring 15+ medical response indicators 24/7 with real-time analytics, automated alerts, and predictive insights for operational decision-making.</div>
       </div>
       <div class="proj">
-        <div class="proj-name"><i class="fas fa-file-contract" style="margin-right:.5rem;color:var(--ora)"></i>Smart Admin Writing Guide Bot</div>
-        <div class="proj-desc">Built on official approved administrative writing standards — AI system supporting review and improvement of 200+ document types with compliance verification and quality assurance.</div>
+        <div class="proj-name"><i class="fas fa-file-contract i-o"></i><span data-i18n="proj4_name">Smart Admin Writing Guide Bot</span></div>
+        <div class="proj-desc" data-i18n="proj4_desc">Built on official approved administrative writing standards — AI system supporting review and improvement of 200+ document types with compliance verification and quality assurance.</div>
       </div>
     </div>
   </div>
@@ -866,29 +932,29 @@
 
       <!-- Left -->
       <div>
-        <div class="eyebrow">Contact</div>
-        <h2 class="cstmt">Let's build<br><em>organizational</em> excellence.</h2>
-        <p class="cdesc">Strong governance and operational intelligence don't happen by accident. I'm excited to discuss how strategic GRC implementation and intelligent data systems can transform your organization's capability and confidence. Let's start a conversation about your governance challenges.</p>
+        <div class="eyebrow" data-i18n="contact_eyebrow">Contact</div>
+        <h2 class="cstmt" data-i18n="contact_heading">Let's build<br><em>organizational</em> excellence.</h2>
+        <p class="cdesc" data-i18n="contact_desc">Strong governance and operational intelligence don't happen by accident. I'm excited to discuss how strategic GRC implementation and intelligent data systems can transform your organization's capability and confidence. Let's start a conversation about your governance challenges.</p>
 
         <div class="clinks">
           <a href="mailto:mousealfaifi@gmail.com" class="clink">
             <div class="clic"><i class="fas fa-envelope"></i></div>
-            <div class="clt"><div class="cll">Email</div><div class="clv">mousealfaifi@gmail.com</div></div>
+            <div class="clt"><div class="cll" data-i18n="link_email">Email</div><div class="clv">mousealfaifi@gmail.com</div></div>
             <i class="fas fa-arrow-right cla"></i>
           </a>
           <a href="tel:+966546748590" class="clink">
             <div class="clic"><i class="fas fa-phone"></i></div>
-            <div class="clt"><div class="cll">Phone</div><div class="clv">+966 54 674 8590</div></div>
+            <div class="clt"><div class="cll" data-i18n="link_phone">Phone</div><div class="clv">+966 54 674 8590</div></div>
             <i class="fas fa-arrow-right cla"></i>
           </a>
           <a href="https://www.linkedin.com/in/mousa-alfaify" target="_blank" rel="noopener" class="clink">
             <div class="clic"><i class="fab fa-linkedin"></i></div>
-            <div class="clt"><div class="cll">LinkedIn</div><div class="clv">mousaalfaify</div></div>
+            <div class="clt"><div class="cll" data-i18n="link_linkedin">LinkedIn</div><div class="clv">mousaalfaify</div></div>
             <i class="fas fa-arrow-right cla"></i>
           </a>
           <a href="https://wa.me/966546748590" target="_blank" rel="noopener" class="clink">
             <div class="clic"><i class="fab fa-whatsapp"></i></div>
-            <div class="clt"><div class="cll">WhatsApp</div><div class="clv">Direct Message</div></div>
+            <div class="clt"><div class="cll" data-i18n="link_whatsapp">WhatsApp</div><div class="clv" data-i18n="link_whatsapp_value">Direct Message</div></div>
             <i class="fas fa-arrow-right cla"></i>
           </a>
         </div>
@@ -897,24 +963,24 @@
       <!-- Right -->
       <div>
         <div class="ebox">
-          <div class="ebh">What to Expect</div>
+          <div class="ebh" data-i18n="expect_title">What to Expect</div>
           <ul class="ebl">
-            <li>Diagnostic assessment of your governance gaps</li>
-            <li>Clear analysis of compliance and operational risks</li>
-            <li>Strategic recommendations tailored to your context</li>
-            <li>Outcomes focused on measurable business impact</li>
+            <li data-i18n="expect_1">Diagnostic assessment of your governance gaps</li>
+            <li data-i18n="expect_2">Clear analysis of compliance and operational risks</li>
+            <li data-i18n="expect_3">Strategic recommendations tailored to your context</li>
+            <li data-i18n="expect_4">Outcomes focused on measurable business impact</li>
           </ul>
         </div>
         <div class="ebox" style="margin-top:.6rem">
-          <div class="ebh">Engagement Types</div>
+          <div class="ebh" data-i18n="engage_title">Engagement Types</div>
           <ul class="ebl">
-            <li>Governance & Compliance Assessment — 2–4 weeks</li>
-            <li>ISO 9001 Implementation & Certification</li>
-            <li>Data Infrastructure & Analytics Build</li>
-            <li>Strategic GRC Advisory (fractional/ongoing)</li>
+            <li data-i18n="engage_1">Governance & Compliance Assessment — 2–4 weeks</li>
+            <li data-i18n="engage_2">ISO 9001 Implementation & Certification</li>
+            <li data-i18n="engage_3">Data Infrastructure & Analytics Build</li>
+            <li data-i18n="engage_4">Strategic GRC Advisory (fractional/ongoing)</li>
           </ul>
         </div>
-        <p style="margin-top:1rem;font-family:var(--ff-m);font-size:.6rem;color:var(--t3);line-height:1.6">
+        <p style="margin-top:1rem;font-family:var(--ff-m);font-size:.6rem;color:var(--t3);line-height:1.6" data-i18n="response_time">
           Response time: all serious inquiries answered within <span style="color:var(--t2)">24 hours</span>.
         </p>
       </div>
@@ -929,26 +995,307 @@
   <div class="w">
     <div class="fi">
       <div>
-        <div class="fn">Mousa Alfaify</div>
-        <div class="fc" style="margin-top:.25rem">GRC Specialist · Data Automation & Organizational Intelligence</div>
+        <div class="fn" data-i18n="footer_name">Mousa Alfaify</div>
+        <div class="fc" style="margin-top:.25rem" data-i18n="footer_title">GRC Specialist · Data Automation & Organizational Intelligence</div>
       </div>
       <div class="fc" id="yr"></div>
       <div class="fs">
-        <a href="https://www.linkedin.com/in/mousa-alfaify" target="_blank" rel="noopener" class="fsi" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:mousealfaifi@gmail.com" class="fsi" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://wa.me/966546748590" target="_blank" rel="noopener" class="fsi" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/mousa-alfaify" target="_blank" rel="noopener" class="fsi" title="LinkedIn" data-i18n-title="link_linkedin"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:mousealfaifi@gmail.com" class="fsi" title="Email" data-i18n-title="link_email"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/966546748590" target="_blank" rel="noopener" class="fsi" title="WhatsApp" data-i18n-title="link_whatsapp"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </div>
 </footer>
 
-<button class="stt" id="stt" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+<button class="stt" id="stt" aria-label="Back to top" data-i18n-aria="a11y_backtotop"><i class="fas fa-arrow-up"></i></button>
 
 
 <script>
   'use strict';
   const $=id=>document.getElementById(id);
   const qsa=s=>document.querySelectorAll(s);
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     I18N — English / Arabic
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  const I18N = {
+    en: {
+      doc_title: "Mousa Alfaify | GRC Specialist",
+      meta_desc: "Mousa Alfaify — GRC Specialist & Data Automation Expert. 9 Certifications in Governance, Risk & Compliance.",
+      a11y_menu: "Menu",
+      a11y_backtotop: "Back to top",
+
+      nav_about: "About", nav_experience: "Experience", nav_skills: "Skills", nav_contact: "Contact", nav_cta: "Get In Touch",
+
+      hero_pill: "Available for Engagements",
+      hero_name: "Mousa<br>Alfaify",
+      hero_role: '<strong>Operations Control Specialist</strong> &amp; Data Automation Expert',
+      hero_desc: "Certified professional with 9 international certifications in Governance, Risk & Compliance — driving measurable results through ISO standards, intelligent data systems, and strategic organizational transformation.",
+      hero_btn1: "View Experience",
+      hero_btn2: "Start Conversation",
+      hero_photo_tag: "GRC Expert",
+      hero_photo_alt: "Mousa Alfaify",
+      hero_photo_fallback: "Add profile.jpg<br>to this directory",
+
+      metric_certs: "International Certifications",
+      metric_years: "Years of Experience",
+      metric_accuracy: "Data Accuracy Achieved",
+      metric_errors: "Operational Error Reduction",
+
+      about_eyebrow: "About",
+      about_heading: "Governance that<br>delivers results.",
+      about_p1: 'Organizations don\'t fail on compliance frameworks — they fail on execution. My practice is built on one principle: <strong>GRC should make your organization stronger, faster, and more confident</strong> in every operational decision.',
+      about_p2: 'I operate at the intersection of <strong>strategy and implementation</strong> — diagnosing governance gaps, architecting compliant systems, and building the infrastructure that ensures sustainable operational excellence.',
+      about_p3: "My engagements span healthcare, government services, and private sector operations — delivering measurable outcomes that appear in quarterly results, not just audit reports.",
+      about_pil1_title: "Diagnostic-Led",
+      about_pil1_desc: "Every engagement starts by understanding the organization, not applying pre-built solutions. I map governance vulnerabilities before recommending changes.",
+      about_pil2_title: "End-to-End Delivery",
+      about_pil2_desc: "From assessment through deployment and adoption. I own the outcome — no handoff ambiguity, no incomplete implementations.",
+      about_pil3_title: "Outcome Accountability",
+      about_pil3_desc: "Every system is tied to a measurable KPI the organization already tracks — cost reduction, risk mitigation, or operational efficiency.",
+
+      exp_eyebrow: "Experience",
+      exp_heading: "Work that moved<br>the needle.",
+      exp_sub: "Strategic leadership and measurable impact across governance, operations, and organizational transformation.",
+
+      lbl_challenge: "Challenge", lbl_solution: "Solution Designed", lbl_results: "Results Delivered", lbl_competencies: "Key Competencies",
+
+      exp1_index: "01 — Saudi Red Crescent Authority",
+      exp1_title: "Internal Communications Specialist",
+      exp1_subtitle: 'Strategic Communications &amp; Organizational Alignment',
+      exp1_badge_label: "Employee Engagement Increase",
+      exp1_challenge: "Organization lacked unified internal communications strategy. Baseline employee engagement was 35% with fragmented departmental messaging and no coordinated communication framework across 6 major departments.",
+      exp1_solution: 'Built comprehensive internal communications strategy with <strong>coordinated messaging across 6 departments</strong>, standardized communication protocols, and engagement-focused content framework.',
+      exp1_results: '<strong>Employee engagement increased from 35% to 68%</strong> | Produced 40+ institutional circulars annually | Established unified communication system serving 500+ employees | Developed specialized event content (50+ pieces annually).',
+      exp1_competencies: "Strategic Communication | Cross-departmental Coordination | Content Management | Institutional Writing (200+ document types) | Employee Engagement | Team Leadership",
+      exp1_insight: '<strong>Key Insight:</strong> Effective organizational communication isn\'t about volume — it\'s about relevance. Aligning messages across departments and focusing on genuine engagement drivers created sustainable, measurable participation increases.',
+
+      exp2_index: "02 — National Ambulatory Center (Saudi Red Crescent)",
+      exp2_title: "Operations Control Specialist",
+      exp2_subtitle: 'GRC Implementation &amp; Data Intelligence',
+      exp2_badge_label: "Data Accuracy Achieved",
+      exp2_challenge: "Emergency services operations relied on fragmented data systems with only 92% accuracy. No real-time performance visibility for 500+ monthly operations. Leadership operated on delayed, unreliable operational intelligence with significant compliance gaps.",
+      exp2_solution: 'Implemented <strong>ISO 9001 Quality Management standards</strong> and architected <strong>12+ key performance indicators</strong> with real-time Power BI dashboard. Established automated data validation, quality protocols, and compliance monitoring framework.',
+      exp2_results: '<strong>Data accuracy improved from 92% to 99.2%</strong> | <strong>Operational errors reduced by 45%</strong> | 24/7 real-time performance dashboard (15+ indicators) | 500+ monthly operations monitored with automated alerts | ISO 9001 certification achieved.',
+      exp2_competencies: "ISO 9001 Implementation | Data Architecture | KPI Design | Power BI (Advanced) | SQL | Excel VBA | Process Optimization | Governance Framework | Real-time Analytics",
+      exp2_insight: '<strong>Key Insight:</strong> True operational excellence requires the marriage of governance and technology. Building trustworthy data systems under quality frameworks enabled leadership to make faster, more confident operational decisions — the real multiplier.',
+
+      certs_eyebrow: "Certifications",
+      certs_heading: "9 International<br>Certifications.",
+      certs_sub: "Globally recognized professional credentials in Governance, Risk, Compliance, Data Management, Exhibitions, and Digital Marketing from leading certification bodies.",
+      cert1_desc: "Governance, Risk & Compliance Professional",
+      cert2_desc: "Governance, Risk & Compliance Auditor",
+      cert3_desc: "Integrated Audit & Assurance Professional",
+      cert4_desc: "Integrated Data Protection Professional",
+      cert5_desc: "Integrated Policy Management Professional",
+      cert6_desc: "Integrated Compliance & Ethics Professional",
+      cert7_desc: "Integrated Risk Management Professional",
+      cert8_desc: "Certified Exhibition Manager",
+      cert9_name: "Google Digital Marketing",
+      cert9_desc: "Digital Marketing Certification",
+
+      skills_eyebrow: "Skills &amp; Tools",
+      skills_heading: "Technical expertise<br>and leadership.",
+      skills_sub: "Advanced technical tools combined with strategic thinking and cross-functional leadership capabilities.",
+      skills_cat1_title: "Technical Tools",
+      skill_powerbi: "Power BI (Advanced)", skill_sql: "SQL (Intermediate)", skill_vba: "Excel VBA (Advanced)", skill_dataviz: "Data Visualization", skill_dashboards: "Analytics Dashboards",
+      skills_cat2_title: "Core GRC",
+      skill_gov: "Governance Frameworks", skill_risk: "Risk Management", skill_compliance: "Compliance Programs", skill_iso: "ISO 9001 Implementation", skill_audit: "Audit & Assurance",
+      skills_cat3_title: "Strategic Skills",
+      skill_strategic: "Strategic Thinking", skill_process: "Process Optimization", skill_problem: "Problem Solving", skill_analytical: "Analytical Thinking", skill_datadriven: "Data-Driven Decision Making",
+      skills_cat4_title: "Leadership",
+      skill_crossfunc: "Cross-Functional Leadership", skill_comm: "Effective Communication", skill_team: "Team Collaboration", skill_time: "Time Management", skill_priority: "Priority Management",
+
+      proj_eyebrow: "Projects &amp; Innovations",
+      proj_heading: "Intelligent systems<br>that scale.",
+      proj_sub: "Custom-built AI and data automation solutions that streamline operations and enhance organizational intelligence.",
+      proj1_name: "Smart Paramedic Bot",
+      proj1_desc: "AI assistant providing instant training and answers for paramedics — processes 500+ daily queries at 94% accuracy with comprehensive operational knowledge integration.",
+      proj2_name: "Smart Data Analyst Bot",
+      proj2_desc: "Generative AI-powered platform transforming organizational data into instant strategic insights for all organizational levels — automated report generation saving 20 hours/week at 98% accuracy.",
+      proj3_name: "Smart Performance Dashboard",
+      proj3_desc: "Advanced control dashboard monitoring 15+ medical response indicators 24/7 with real-time analytics, automated alerts, and predictive insights for operational decision-making.",
+      proj4_name: "Smart Admin Writing Guide Bot",
+      proj4_desc: "Built on official approved administrative writing standards — AI system supporting review and improvement of 200+ document types with compliance verification and quality assurance.",
+
+      contact_eyebrow: "Contact",
+      contact_heading: "Let's build<br><em>organizational</em> excellence.",
+      contact_desc: "Strong governance and operational intelligence don't happen by accident. I'm excited to discuss how strategic GRC implementation and intelligent data systems can transform your organization's capability and confidence. Let's start a conversation about your governance challenges.",
+      link_email: "Email", link_phone: "Phone", link_linkedin: "LinkedIn", link_whatsapp: "WhatsApp", link_whatsapp_value: "Direct Message",
+      expect_title: "What to Expect",
+      expect_1: "Diagnostic assessment of your governance gaps",
+      expect_2: "Clear analysis of compliance and operational risks",
+      expect_3: "Strategic recommendations tailored to your context",
+      expect_4: "Outcomes focused on measurable business impact",
+      engage_title: "Engagement Types",
+      engage_1: "Governance & Compliance Assessment — 2–4 weeks",
+      engage_2: "ISO 9001 Implementation & Certification",
+      engage_3: "Data Infrastructure & Analytics Build",
+      engage_4: "Strategic GRC Advisory (fractional/ongoing)",
+      response_time: 'Response time: all serious inquiries answered within <span style="color:var(--t2)">24 hours</span>.',
+
+      footer_name: "Mousa Alfaify",
+      footer_title: "GRC Specialist · Data Automation & Organizational Intelligence"
+    },
+    ar: {
+      doc_title: "موسى الفيفي | أخصائي حوكمة ومخاطر وامتثال",
+      meta_desc: "موسى الفيفي — أخصائي حوكمة ومخاطر وامتثال وخبير أتمتة بيانات. حاصل على 9 شهادات معتمدة في الحوكمة وإدارة المخاطر والامتثال.",
+      a11y_menu: "القائمة",
+      a11y_backtotop: "العودة للأعلى",
+
+      nav_about: "نبذة عني", nav_experience: "الخبرات", nav_skills: "المهارات", nav_contact: "التواصل", nav_cta: "تواصل معي",
+
+      hero_pill: "متاح لاستقبال المشاريع",
+      hero_name: "موسى الفيفي",
+      hero_role: '<strong>أخصائي رقابة عمليات</strong> وخبير أتمتة البيانات',
+      hero_desc: "محترف معتمد حاصل على 9 شهادات دولية في الحوكمة وإدارة المخاطر والامتثال — يحقق نتائج ملموسة من خلال معايير الآيزو، والأنظمة الذكية للبيانات، والتحول المؤسسي الاستراتيجي.",
+      hero_btn1: "عرض الخبرات",
+      hero_btn2: "ابدأ محادثة",
+      hero_photo_tag: "خبير حوكمة",
+      hero_photo_alt: "موسى الفيفي",
+      hero_photo_fallback: "أضف ملف profile.jpg<br>إلى هذا المجلد",
+
+      metric_certs: "شهادة دولية معتمدة",
+      metric_years: "سنوات الخبرة",
+      metric_accuracy: "دقة البيانات المحققة",
+      metric_errors: "تقليل الأخطاء التشغيلية",
+
+      about_eyebrow: "نبذة عني",
+      about_heading: "حوكمة تحقق نتائج فعلية.",
+      about_p1: 'المؤسسات لا تفشل بسبب أطر الامتثال، بل تفشل في التنفيذ. تقوم ممارستي على مبدأ واحد: <strong>يجب أن تجعل الحوكمة وإدارة المخاطر والامتثال مؤسستك أقوى وأسرع وأكثر ثقة</strong> في كل قرار تشغيلي.',
+      about_p2: 'أعمل عند تقاطع <strong>الاستراتيجية والتنفيذ</strong> — من خلال تشخيص فجوات الحوكمة، وتصميم أنظمة متوافقة، وبناء البنية التحتية التي تضمن التميز التشغيلي المستدام.',
+      about_p3: "تمتد مشاريعي عبر قطاعات الرعاية الصحية والخدمات الحكومية وعمليات القطاع الخاص — لتحقيق نتائج ملموسة تظهر في التقارير الفصلية، وليس فقط في تقارير التدقيق.",
+      about_pil1_title: "قائم على التشخيص",
+      about_pil1_desc: "يبدأ كل مشروع بفهم المؤسسة أولاً، لا بتطبيق حلول جاهزة. أقوم برسم خريطة لنقاط الضعف في الحوكمة قبل تقديم أي توصيات.",
+      about_pil2_title: "تنفيذ شامل من البداية للنهاية",
+      about_pil2_desc: "من التقييم إلى التطبيق والتبني الكامل. أتحمل مسؤولية النتيجة بالكامل — دون غموض في التسليم أو تنفيذ ناقص.",
+      about_pil3_title: "المساءلة عن النتائج",
+      about_pil3_desc: "كل نظام مرتبط بمؤشر أداء قابل للقياس تتابعه المؤسسة أصلاً — سواء كان خفض التكاليف، أو تخفيف المخاطر، أو رفع الكفاءة التشغيلية.",
+
+      exp_eyebrow: "الخبرات",
+      exp_heading: "أعمال أحدثت فرقاً حقيقياً.",
+      exp_sub: "قيادة استراتيجية وأثر ملموس عبر الحوكمة والعمليات والتحول المؤسسي.",
+
+      lbl_challenge: "التحدي", lbl_solution: "الحل المصمَّم", lbl_results: "النتائج المحققة", lbl_competencies: "الكفاءات الرئيسية",
+
+      exp1_index: "01 — هيئة الهلال الأحمر السعودي",
+      exp1_title: "أخصائي اتصال داخلي",
+      exp1_subtitle: "الاتصال الاستراتيجي والمواءمة المؤسسية",
+      exp1_badge_label: "ارتفاع في تفاعل الموظفين",
+      exp1_challenge: "افتقرت المؤسسة إلى استراتيجية اتصال داخلي موحّدة. كان معدل تفاعل الموظفين الأساسي 35% مع رسائل متفرقة بين الإدارات وعدم وجود إطار اتصال منسّق عبر 6 إدارات رئيسية.",
+      exp1_solution: 'تم بناء استراتيجية اتصال داخلي شاملة مع <strong>رسائل منسقة عبر 6 إدارات</strong>، وبروتوكولات اتصال موحدة، وإطار محتوى يركز على التفاعل.',
+      exp1_results: '<strong>ارتفع تفاعل الموظفين من 35% إلى 68%</strong> | إصدار أكثر من 40 تعميماً مؤسسياً سنوياً | إنشاء نظام اتصال موحد يخدم أكثر من 500 موظف | تطوير محتوى فعاليات متخصص (أكثر من 50 قطعة سنوياً).',
+      exp1_competencies: "الاتصال الاستراتيجي | التنسيق بين الإدارات | إدارة المحتوى | الكتابة المؤسسية (أكثر من 200 نوع مستند) | تفاعل الموظفين | قيادة الفريق",
+      exp1_insight: '<strong>الرؤية الأساسية:</strong> الاتصال المؤسسي الفعّال لا يقاس بالكمية، بل بالملاءمة. مواءمة الرسائل بين الإدارات والتركيز على محفزات التفاعل الحقيقية أدّت إلى زيادة مستدامة وقابلة للقياس في المشاركة.',
+
+      exp2_index: "02 — المركز الوطني للإسعاف (الهلال الأحمر السعودي)",
+      exp2_title: "أخصائي مراقبة العمليات",
+      exp2_subtitle: "تطبيق الحوكمة والمخاطر والامتثال وذكاء البيانات",
+      exp2_badge_label: "دقة البيانات المحققة",
+      exp2_challenge: "اعتمدت عمليات خدمات الطوارئ على أنظمة بيانات متفرقة بدقة لا تتجاوز 92%. لم تكن هناك رؤية أداء لحظية لأكثر من 500 عملية شهرية. كانت القيادة تعتمد على معلومات تشغيلية متأخرة وغير موثوقة مع فجوات امتثال كبيرة.",
+      exp2_solution: 'تم تطبيق <strong>معايير إدارة الجودة آيزو 9001</strong> وتصميم <strong>أكثر من 12 مؤشر أداء رئيسي</strong> ضمن لوحة بيانات لحظية عبر Power BI. كما تم إنشاء نظام تحقق آلي من البيانات، وبروتوكولات جودة، وإطار لمراقبة الامتثال.',
+      exp2_results: '<strong>تحسّنت دقة البيانات من 92% إلى 99.2%</strong> | <strong>انخفضت الأخطاء التشغيلية بنسبة 45%</strong> | لوحة أداء لحظية على مدار الساعة (أكثر من 15 مؤشراً) | مراقبة أكثر من 500 عملية شهرية بتنبيهات آلية | الحصول على شهادة آيزو 9001.',
+      exp2_competencies: "تطبيق آيزو 9001 | هندسة البيانات | تصميم مؤشرات الأداء | Power BI (متقدم) | SQL | Excel VBA | تحسين العمليات | إطار الحوكمة | التحليلات اللحظية",
+      exp2_insight: '<strong>الرؤية الأساسية:</strong> التميز التشغيلي الحقيقي يتطلب اقتران الحوكمة بالتقنية. بناء أنظمة بيانات موثوقة ضمن أطر الجودة مكّن القيادة من اتخاذ قرارات تشغيلية أسرع وأكثر ثقة — وهذا هو عامل المضاعفة الحقيقي.',
+
+      certs_eyebrow: "الشهادات",
+      certs_heading: "9 شهادات دولية معتمدة.",
+      certs_sub: "مؤهلات مهنية معترف بها عالمياً في الحوكمة، إدارة المخاطر، الامتثال، إدارة البيانات، إدارة المعارض، والتسويق الرقمي، صادرة من جهات اعتماد رائدة.",
+      cert1_desc: "محترف معتمد في حوكمة المخاطر والامتثال",
+      cert2_desc: "مدقق معتمد في حوكمة المخاطر والامتثال",
+      cert3_desc: "محترف التدقيق والضمان المتكامل",
+      cert4_desc: "محترف حماية البيانات المتكاملة",
+      cert5_desc: "محترف إدارة السياسات المتكاملة",
+      cert6_desc: "محترف الامتثال والأخلاقيات المتكاملة",
+      cert7_desc: "محترف إدارة المخاطر المتكاملة",
+      cert8_desc: "محترف معتمد في إدارة المعارض",
+      cert9_name: "التسويق الرقمي (Google)",
+      cert9_desc: "شهادة معتمدة في التسويق الرقمي من Google",
+
+      skills_eyebrow: "المهارات والأدوات",
+      skills_heading: "خبرة تقنية وقيادة فعّالة.",
+      skills_sub: "أدوات تقنية متقدمة إلى جانب تفكير استراتيجي وقدرات قيادية عابرة للإدارات.",
+      skills_cat1_title: "الأدوات التقنية",
+      skill_powerbi: "Power BI (متقدم)", skill_sql: "SQL (متوسط)", skill_vba: "Excel VBA (متقدم)", skill_dataviz: "تصور البيانات", skill_dashboards: "لوحات التحليلات",
+      skills_cat2_title: "أساسيات الحوكمة والمخاطر والامتثال",
+      skill_gov: "أطر الحوكمة", skill_risk: "إدارة المخاطر", skill_compliance: "برامج الامتثال", skill_iso: "تطبيق آيزو 9001", skill_audit: "التدقيق والضمان",
+      skills_cat3_title: "المهارات الاستراتيجية",
+      skill_strategic: "التفكير الاستراتيجي", skill_process: "تحسين العمليات", skill_problem: "حل المشكلات", skill_analytical: "التفكير التحليلي", skill_datadriven: "اتخاذ القرار المبني على البيانات",
+      skills_cat4_title: "القيادة",
+      skill_crossfunc: "القيادة عابرة الإدارات", skill_comm: "التواصل الفعّال", skill_team: "العمل الجماعي", skill_time: "إدارة الوقت", skill_priority: "إدارة الأولويات",
+
+      proj_eyebrow: "المشاريع والابتكارات",
+      proj_heading: "أنظمة ذكية قابلة للتوسع.",
+      proj_sub: "حلول مخصصة بالذكاء الاصطناعي وأتمتة البيانات تعمل على تبسيط العمليات وتعزيز الذكاء المؤسسي.",
+      proj1_name: "بوت المسعف الذكي",
+      proj1_desc: "مساعد ذكاء اصطناعي يوفر تدريباً وإجابات فورية للمسعفين — يعالج أكثر من 500 استفسار يومياً بدقة 94% مع تكامل شامل للمعرفة التشغيلية.",
+      proj2_name: "بوت محلل البيانات الذكي",
+      proj2_desc: "منصة مدعومة بالذكاء الاصطناعي التوليدي تحوّل بيانات المؤسسة إلى رؤى استراتيجية فورية لجميع المستويات الإدارية — توليد تقارير آلي يوفر 20 ساعة أسبوعياً بدقة 98%.",
+      proj3_name: "لوحة الأداء الذكية",
+      proj3_desc: "لوحة تحكم متقدمة تراقب أكثر من 15 مؤشراً للاستجابة الطبية على مدار الساعة بتحليلات لحظية وتنبيهات آلية ورؤى تنبؤية لدعم القرار التشغيلي.",
+      proj4_name: "بوت دليل الكتابة الإدارية الذكي",
+      proj4_desc: "مبني على معايير الكتابة الإدارية الرسمية المعتمدة — نظام ذكاء اصطناعي يدعم مراجعة وتحسين أكثر من 200 نوع مستند مع التحقق من الامتثال وضمان الجودة.",
+
+      contact_eyebrow: "التواصل",
+      contact_heading: "لنبنِ معاً تميّزاً <em>مؤسسياً</em>.",
+      contact_desc: "الحوكمة القوية والذكاء التشغيلي لا يحدثان بالصدفة. يسعدني مناقشة كيف يمكن لتطبيق استراتيجي للحوكمة والمخاطر والامتثال وأنظمة بيانات ذكية أن يحوّل قدرة مؤسستك وثقتها. لنبدأ حديثاً حول تحديات الحوكمة لديكم.",
+      link_email: "البريد الإلكتروني", link_phone: "الهاتف", link_linkedin: "لينكدإن", link_whatsapp: "واتساب", link_whatsapp_value: "مراسلة مباشرة",
+      expect_title: "ما يمكن توقعه",
+      expect_1: "تقييم تشخيصي لفجوات الحوكمة لديكم",
+      expect_2: "تحليل واضح لمخاطر الامتثال والتشغيل",
+      expect_3: "توصيات استراتيجية مصممة خصيصاً لسياق مؤسستكم",
+      expect_4: "نتائج تركز على أثر ملموس على الأعمال",
+      engage_title: "أنواع المشاريع",
+      engage_1: "تقييم الحوكمة والامتثال — من 2 إلى 4 أسابيع",
+      engage_2: "تطبيق واعتماد آيزو 9001",
+      engage_3: "بناء البنية التحتية للبيانات والتحليلات",
+      engage_4: "استشارات استراتيجية في الحوكمة والمخاطر والامتثال (جزئية/مستمرة)",
+      response_time: 'زمن الاستجابة: يتم الرد على جميع الاستفسارات الجادة خلال <span style="color:var(--t2)">24 ساعة</span>.',
+
+      footer_name: "موسى الفيفي",
+      footer_title: "أخصائي حوكمة ومخاطر وامتثال · أتمتة البيانات والذكاء المؤسسي"
+    }
+  };
+
+  let currentLang = localStorage.getItem('site_lang') || ((navigator.language||'').toLowerCase().startsWith('ar') ? 'ar' : 'en');
+
+  function photoFallback(img){
+    img.outerHTML = '<div class="hpph"><i class="fas fa-user"></i><p data-i18n="hero_photo_fallback">'+I18N[currentLang].hero_photo_fallback+'</p></div>';
+  }
+  window.photoFallback = photoFallback;
+
+  function applyLang(lang){
+    currentLang = lang;
+    const dict = I18N[lang];
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.title = dict.doc_title;
+    $('metaDesc').setAttribute('content', dict.meta_desc);
+
+    qsa('[data-i18n]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      if(dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    qsa('[data-i18n-aria]').forEach(el=>{
+      const key = el.getAttribute('data-i18n-aria');
+      if(dict[key] !== undefined) el.setAttribute('aria-label', dict[key]);
+    });
+    qsa('[data-i18n-title]').forEach(el=>{
+      const key = el.getAttribute('data-i18n-title');
+      if(dict[key] !== undefined) el.setAttribute('title', dict[key]);
+    });
+    qsa('[data-i18n-alt]').forEach(el=>{
+      const key = el.getAttribute('data-i18n-alt');
+      if(dict[key] !== undefined) el.setAttribute('alt', dict[key]);
+    });
+
+    $('langswTxt').textContent = lang === 'ar' ? 'English' : 'العربية';
+    localStorage.setItem('site_lang', lang);
+  }
+
+  applyLang(currentLang);
+  $('langsw').addEventListener('click', ()=> applyLang(currentLang === 'ar' ? 'en' : 'ar'));
 
   /* NAV scroll */
   const nav=$('nav');
