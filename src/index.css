@@ -65,7 +65,12 @@ body {
 }
 .on-bark :focus-visible { outline-color: var(--color-accent-3); }
 
-img { display: block; max-width: 100%; height: auto; }
+/* Base element defaults belong in @layer base: unlayered rules outrank every
+   layered utility, so an unlayered `img { max-width: 100% }` would silently
+   beat any max-w-* class set on an image. */
+@layer base {
+  img { display: block; max-width: 100%; height: auto; }
+}
 
 /* ============================================================
    Typography utilities
