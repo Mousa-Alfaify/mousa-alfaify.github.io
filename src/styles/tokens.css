@@ -1,0 +1,93 @@
+/* ============================================================
+   MOUSA ALFAIFY — Design Tokens
+   One brand colour on white:
+   - #FFFFFF  the page ground, everywhere
+   - #192F3E  deep navy — headings, buttons, icons, links, dark sections
+   - cool neutral greys derived from that navy for everything between
+   ============================================================ */
+
+@theme {
+  /* ---- Color ----
+     Every text/background pair below meets WCAG 2.2 AA. */
+
+  /* Light grounds */
+  --color-paper:      #FFFFFF;
+  --color-paper-2:    #F6F8F9;
+  --color-paper-3:    #EAEEF1;
+  --color-line:       #DFE5E9;
+  --color-line-soft:  #EDF1F3;
+
+  /* Type on light */
+  --color-ink:        #192F3E;
+  --color-ink-2:      #3C5566;
+  --color-ink-3:      #566D7C;
+  --color-ink-4:      #5B7181;
+
+  /* Dark sections */
+  --color-bark:       #192F3E;
+  --color-bark-2:     #11212C;
+  --color-bark-line:  #2E4757;
+  --color-bark-ink:   #F2F6F8;
+  --color-bark-ink-2: #AFC3CF;
+  --color-bark-ink-3: #93A9B7;
+
+  /* Interactive — the brand navy, one lighter step for hover,
+     one light step for use on dark grounds */
+  --color-accent:     #192F3E;
+  --color-accent-2:   #2F5B77;
+  --color-accent-3:   #8CB9D4;
+  --color-accent-tint:#EAF1F5;
+
+  /* ---- Type ---- */
+  --font-sans: 'Thmanyah Sans', ui-sans-serif, system-ui, 'Segoe UI', sans-serif;
+
+  /* ---- Spacing rhythm ---- */
+  --spacing-gutter: 1.5rem;
+
+  /* ---- Radius ---- */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+
+  /* ---- Motion ---- */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---- Breakpoints (Tailwind defaults kept, plus wide) ---- */
+  --breakpoint-3xl: 1728px;
+}
+
+:root {
+  color-scheme: light;
+
+  /* Motion durations */
+  --dur-fast: 170ms;
+  --dur-base: 380ms;
+  --dur-slow: 700ms;
+  --dur-reveal: 880ms;
+  --dur-hero: 430ms;
+
+  /* Z-index scale */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-sticky: 40;
+  --z-nav: 60;
+  --z-overlay: 80;
+  --z-modal: 90;
+  --z-cursor: 100;
+
+
+  /* Paper grain — one SVG turbulence tile, rasterised once by the browser */
+  --grain-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+
+  /* Container */
+  --shell: 1360px;
+  --shell-narrow: 940px;
+
+  /* Elevation — soft, warm, never grey */
+  --shadow-sm: 0 1px 2px rgb(25 47 62 / 0.06);
+  --shadow-md: 0 8px 24px -12px rgb(25 47 62 / 0.20);
+  --shadow-lg: 0 30px 70px -40px rgb(25 47 62 / 0.40);
+}

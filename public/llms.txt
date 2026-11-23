@@ -1,0 +1,38 @@
+# Mousa Alfaify
+
+> Operations Control Specialist at the Saudi Red Crescent Authority, working across
+> governance, risk, compliance, operations, data and automation. Based in Riyadh,
+> Saudi Arabia. Published in Arabic and English.
+
+## Practice
+
+Building the systems that connect a control framework to daily operational data and to
+the decision actually being made — rather than producing policy documents or dashboards
+in isolation.
+
+- [Arabic edition](https://mousa-alfaify.github.io/?lang=ar): the primary edition of the site.
+- [English edition](https://mousa-alfaify.github.io/?lang=en): full English translation.
+
+## Selected work
+
+- [Operational Control System](https://mousa-alfaify.github.io/#work): ISO 9001 applied to the data cycle of a national ambulatory command centre — 12+ KPIs, automated validation, a live Power BI board. Data accuracy 92% to 99.2%; operational errors down 45%.
+- [Smart Performance Dashboard](https://mousa-alfaify.github.io/#work): 15+ medical response indicators monitored around the clock with threshold-driven alerts.
+- [Smart Paramedic Assistant](https://mousa-alfaify.github.io/#work): AI assistant answering 500+ field queries a day at 94% accuracy, grounded in the approved operational reference.
+- [Smart Data Analyst](https://mousa-alfaify.github.io/#work): automated reporting saving 20 working hours a week at 98% analytical accuracy.
+- [Administrative Writing Guide](https://mousa-alfaify.github.io/#work): the official approved writing standard turned into a verification layer across 200+ document types.
+- [Internal Communications System](https://mousa-alfaify.github.io/#work): employee engagement lifted from 35% to 68% across 6 departments and 500+ staff; 22+ campaigns delivered.
+
+## Background
+
+- [Professional journey](https://mousa-alfaify.github.io/#experience): Operations Control Specialist since September 2022; Internal Communications Specialist 2020–2022, both at the Saudi Red Crescent Authority.
+- [Capability map](https://mousa-alfaify.github.io/#capabilities): how governance, risk, compliance, operations and data connect through an AI and automation layer.
+- [About](https://mousa-alfaify.github.io/#about): 25+ entities worked with, 420+ projects delivered.
+
+## Credentials
+
+- [Credentials](https://mousa-alfaify.github.io/#work): GRCP, GRCA, IAAP, IDPP, IPMP, ICEP, IRMP, CEM, and the Google Digital Marketing certification.
+
+## Contact
+
+- [Email](mailto:mousealfaifi@gmail.com): mousealfaifi@gmail.com
+- [LinkedIn](https://www.linkedin.com/in/mousa-alfaify): professional profile.

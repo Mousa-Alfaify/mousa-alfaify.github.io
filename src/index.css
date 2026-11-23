@@ -1,0 +1,219 @@
+@import 'tailwindcss';
+@import './styles/tokens.css';
+
+/* ============================================================
+   Thmanyah Sans — the single typeface of this identity.
+   Licensed family supplied by the site owner.
+   ============================================================ */
+@font-face {
+  font-family: 'Thmanyah Sans';
+  src: url('/fonts/thmanyahsans-Light.woff2') format('woff2');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Thmanyah Sans';
+  src: url('/fonts/thmanyahsans-Medium.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Thmanyah Sans';
+  src: url('/fonts/thmanyahsans-Bold.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Thmanyah Sans';
+  src: url('/fonts/thmanyahsans-Black.woff2') format('woff2');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+* { min-width: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+/* Language-aware reading rhythm. Arabic needs more leading. */
+[dir='rtl'] body { line-height: 1.95; letter-spacing: 0; }
+[dir='ltr'] body { line-height: 1.7; }
+
+::selection { background: var(--color-accent); color: var(--color-paper); }
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.on-bark :focus-visible { outline-color: var(--color-accent-3); }
+
+img { display: block; max-width: 100%; height: auto; }
+
+/* ============================================================
+   Typography utilities
+   ============================================================ */
+.u-display {
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+}
+[dir='rtl'] .u-display { line-height: 1.02; letter-spacing: -0.01em; }
+
+.u-head {
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+}
+[dir='rtl'] .u-head { line-height: 1.35; letter-spacing: 0; }
+
+.u-lede {
+  font-weight: 300;
+  line-height: 1.55;
+  letter-spacing: -0.012em;
+}
+[dir='rtl'] .u-lede { line-height: 1.85; letter-spacing: 0; }
+
+.u-mono {
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+[dir='rtl'] .u-mono { letter-spacing: 0.06em; text-transform: none; font-size: 0.75rem; }
+
+.u-num { font-variant-numeric: tabular-nums lining-nums; font-feature-settings: 'tnum' 1; }
+
+/* Latin fragments inside Arabic copy stay LTR and keep their own tracking */
+.u-lat { direction: ltr; unicode-bidi: isolate; display: inline-block; letter-spacing: -0.01em; }
+
+/* ============================================================
+   Surface / texture
+   ============================================================ */
+.u-grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.26;
+  mix-blend-mode: multiply;
+  background-image: var(--grain-url);
+  background-size: 180px 180px;
+  z-index: 1;
+}
+.on-bark.u-grain::before { mix-blend-mode: overlay; opacity: 0.22; }
+
+.u-rule { height: 1px; background: var(--color-line); border: 0; }
+.on-bark .u-rule { background: var(--color-bark-line); }
+
+/* ============================================================
+   Reveal system — one language for the whole site
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-out-soft),
+    transform var(--dur-reveal) var(--ease-out-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+/* The hero is already on screen. Its entrance is a pure CSS animation with no
+   JavaScript gate, so the prerendered markup starts animating the moment the
+   stylesheet is parsed — the opening sentence is readable almost instantly and
+   the page still works with scripting disabled. */
+.hero-in {
+  animation: heroIn var(--dur-hero) var(--ease-out-soft) both;
+  animation-delay: var(--hero-delay, 0ms);
+}
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-in { animation: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   Structure overlay — the easter egg.
+   Governance made literal: reveal the grid the page is built on.
+   ============================================================ */
+.structure-on [data-block] {
+  outline: 1px dashed color-mix(in oklab, var(--color-accent) 55%, transparent);
+  outline-offset: -1px;
+}
+.structure-on [data-block]::after {
+  content: attr(data-block);
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  z-index: 50;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  color: var(--color-paper);
+  background: var(--color-accent);
+  pointer-events: none;
+}
+
+/* Utility: hide scrollbar on horizontal rails while keeping scroll */
+.no-bar { scrollbar-width: none; }
+.no-bar::-webkit-scrollbar { display: none; }
+
+/* ============================================================
+   Work diagrams
+   ============================================================ */
+.wv-draw { stroke-dasharray: 420; stroke-dashoffset: 0; }
+/* Only hide the line where a reveal will draw it; elsewhere (the case reader)
+   it must render immediately. */
+.reveal .wv-draw { stroke-dashoffset: 420; }
+.reveal.is-in .wv-draw,
+.is-in .wv-draw { animation: wvDraw 1.4s var(--ease-out-soft) 0.15s forwards; }
+@keyframes wvDraw { to { stroke-dashoffset: 0; } }
+
+.wv-ring { transform-origin: 200px 125px; animation: wvSpin 38s linear infinite; }
+@keyframes wvSpin { to { transform: rotate(360deg); } }
+
+.wv-pulse { animation: wvPulse 2.8s var(--ease-in-out-soft) infinite; }
+@keyframes wvPulse { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .wv-draw { stroke-dashoffset: 0; animation: none; }
+  .wv-ring, .wv-pulse { animation: none; }
+}
+
+/* Capability map — the enabling layer keeps a slow orbit */
+.cm-orbit { animation: cmSpin 26s linear infinite; }
+@keyframes cmSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .cm-orbit { animation: none; } }
